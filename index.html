@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Visibility HQ — Be Found. Get Calls. Win Jobs.</title>
+<meta name="description" content="Free local visibility audits for Perth tradies and small businesses. See how you rank on Google Maps against local competitors, then fix it with a $149 roadmap or $499 done-for-you Google Business Profile optimisation.">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -15,7 +16,11 @@
     --amber-light: #FFC85A;
     --white: #FFFFFF;
     --slate: #F7F8FA;
-    --muted: #6B7A8F;
+    --muted: #556274;       /* secondary text on light backgrounds (≥4.5:1 on white & slate) */
+    --muted-dark: #94A3B8;  /* secondary text on navy backgrounds */
+    --amber-text: #B45309;  /* amber for small text on light backgrounds */
+    --teal-text: #0F766E;
+    --blue-strong: #2563EB; /* blue backgrounds behind white text */
     --border: #E2E8F0;
     --green: #22C55E;
   }
@@ -92,7 +97,7 @@
     margin: 0 auto;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 2fr; /* 60/40: hero text / sample report */
     gap: 60px;
     align-items: center;
     position: relative;
@@ -160,25 +165,6 @@
   }
   .btn-ghost:hover { color: var(--white); border-color: rgba(255,255,255,0.3); }
 
-  .hero-trust {
-    display: flex; align-items: center; gap: 12px;
-    margin-top: 28px;
-    color: #64748B;
-    font-size: 13px;
-  }
-  .trust-avatars { display: flex; }
-  .trust-avatar {
-    width: 28px; height: 28px;
-    border-radius: 50%;
-    border: 2px solid var(--navy);
-    margin-left: -8px;
-    overflow: hidden;
-    background: var(--navy-mid);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px; font-weight: 600; color: var(--amber);
-  }
-  .trust-avatar:first-child { margin-left: 0; }
-
   /* ─── SCORE WIDGET ────────────────────────── */
   .score-card {
     background: var(--navy-mid);
@@ -192,7 +178,7 @@
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--muted-dark);
     margin-bottom: 20px;
   }
   .score-meter {
@@ -213,7 +199,7 @@
     line-height: 1;
     margin-bottom: 4px;
   }
-  .score-number span { font-size: 24px; color: var(--muted); }
+  .score-number span { font-size: 24px; color: var(--muted-dark); }
   .score-status {
     display: inline-flex; align-items: center; gap: 6px;
     font-size: 13px; font-weight: 600;
@@ -221,7 +207,7 @@
     border-radius: 6px;
     margin-bottom: 24px;
   }
-  .status-danger { background: rgba(239,68,68,0.15); color: #F87171; }
+  .status-danger { background: rgba(239,68,68,0.15); color: #FCA5A5; }
 
   .score-gaps {
     display: flex; flex-direction: column; gap: 8px;
@@ -242,7 +228,7 @@
   .gap-icon.red { background: rgba(239,68,68,0.15); }
   .gap-icon.yellow { background: rgba(245,166,35,0.15); }
   .gap-text { font-size: 13px; color: #CBD5E1; flex: 1; }
-  .gap-pts { font-size: 12px; font-weight: 600; color: var(--muted); }
+  .gap-pts { font-size: 12px; font-weight: 600; color: var(--muted-dark); }
 
   .score-footer {
     display: flex; align-items: center; justify-content: space-between;
@@ -250,7 +236,7 @@
     padding-top: 20px;
     border-top: 1px solid rgba(255,255,255,0.06);
     font-size: 12px;
-    color: var(--muted);
+    color: var(--muted-dark);
   }
   .score-badge {
     display: inline-flex; align-items: center; gap: 4px;
@@ -270,7 +256,7 @@
   .section-eyebrow {
     font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: var(--amber);
+    color: var(--amber-text);
     margin-bottom: 12px;
     display: block;
   }
@@ -310,7 +296,7 @@
     font-weight: 800;
     font-size: 11px;
     letter-spacing: 2px;
-    color: var(--amber);
+    color: var(--amber-text);
     margin-bottom: 16px;
   }
   .step-icon {
@@ -428,6 +414,19 @@
   }
   .plan-cta.solid:hover { background: var(--amber-light); }
 
+  /* ─── FORM NOTES ────────────────────────── */
+  .form-note {
+    font-size: 13px;
+    line-height: 1.55;
+    color: #334155;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-top: 4px;
+  }
+  .form-note a { color: var(--blue-strong); font-weight: 600; }
+
   /* ─── TESTIMONIALS ────────────────────────── */
   #testimonials {
     background: var(--slate);
@@ -487,10 +486,10 @@
     margin-bottom: 16px;
   }
   .cta-h2 em { font-style: normal; color: var(--amber); }
-  .cta-sub { font-size: 16px; color: #94A3B8; line-height: 1.6; margin-bottom: 36px; }
+  .cta-sub { font-size: 16px; color: var(--muted-dark); line-height: 1.6; margin-bottom: 36px; }
   .cta-guarantee {
     display: inline-flex; align-items: center; gap: 8px;
-    font-size: 13px; color: #64748B; margin-top: 20px;
+    font-size: 13px; color: var(--muted-dark); margin-top: 20px;
   }
 
   /* ─── FOOTER ──────────────────────────────── */
@@ -518,7 +517,7 @@
     width: auto;
   }
   .footer-logo span { color: #3B82F6; }
-  .footer-meta { font-size: 13px; color: #475569; }
+  .footer-meta { font-size: 13px; color: var(--muted-dark); }
 
   /* ─── LEAD FORM MODALS ──────────────────────────── */
   .modal-overlay {
@@ -585,7 +584,7 @@
   .form-row .hint {
     display: block;
     font-size: 12px;
-    color: #94A3B8;
+    color: var(--muted);
     margin-top: 4px;
     font-weight: 400;
   }
@@ -625,7 +624,7 @@
   .checkbox-group input { width: auto; }
   .form-consent {
     font-size: 12px;
-    color: #94A3B8;
+    color: var(--muted);
     margin: 18px 0;
     line-height: 1.5;
   }
@@ -708,8 +707,10 @@
       <text x="84" y="50" font-family="'Sora',sans-serif" font-size="9" fill="#6B7A8F" letter-spacing="3">LOCAL VISIBILITY AUDITS</text>
     </svg>
   </div>
-  <a href="#cta" class="nav-cta">Get Free Audit →</a>
+  <a href="#cta" class="nav-cta" onclick="openModal('modal-free'); return false;">Get Free Audit →</a>
 </nav>
+
+<main id="main">
 
 <!-- HERO -->
 <section id="hero">
@@ -727,21 +728,12 @@
         We run a free local visibility audit for trades and small businesses in Perth's north. Find out exactly where you're losing calls — and what to do about it.
       </p>
       <div class="hero-actions">
-        <a href="#cta" class="btn-primary">
+        <a href="#cta" class="btn-primary" onclick="openModal('modal-free'); return false;">
           Get Your Free Audit →
         </a>
         <a href="#how" class="btn-ghost">
           See how it works
         </a>
-      </div>
-      <div class="hero-trust">
-        <div class="trust-avatars">
-          <div class="trust-avatar">DP</div>
-          <div class="trust-avatar">SB</div>
-          <div class="trust-avatar">MK</div>
-          <div class="trust-avatar">RH</div>
-        </div>
-        <span>Trusted by 40+ local Perth businesses</span>
       </div>
     </div>
 
@@ -803,7 +795,7 @@
         <div class="step-num">STEP 02</div>
         <span class="step-icon">📋</span>
         <div class="step-title">Choose Your Path</div>
-        <p class="step-desc">One quick question: do you want a step-by-step fix-it roadmap ($149), or have us handle everything for you ($497)?</p>
+        <p class="step-desc">One quick question: do you want a step-by-step fix-it roadmap ($149), or have us handle everything for you ($499)?</p>
         <div class="step-accent"></div>
       </div>
       <div class="step-card fade-up" style="transition-delay:0.2s">
@@ -845,7 +837,7 @@
       <div class="plan-card fade-up" style="transition-delay:0.1s; border:2px solid #0F1B2D;">
         <div class="plan-name">Visibility Growth Plan</div>
         <div class="plan-desc">A custom step-by-step roadmap of exactly what's costing you local jobs — with a clear 30-day fix-it plan you can work through at your own pace.</div>
-        <div class="plan-price" style="color:#14B8A6">$149</div>
+        <div class="plan-price" style="color:var(--teal-text)">$149</div>
         <div class="plan-price-note">one-time</div>
         <div class="plan-features">
           <div class="plan-feat"><span class="feat-check">✓</span>Detailed competitor analysis</div>
@@ -861,7 +853,7 @@
 
       <!-- Level 4: DFY -->
       <div class="plan-card featured fade-up" style="transition-delay:0.2s">
-        <div class="plan-badge" style="background:#3B82F6;color:#fff;">Most Popular</div>
+        <div class="plan-badge" style="background:var(--blue-strong);color:#fff;">Most Popular</div>
         <div class="plan-name">Done For You</div>
         <div class="plan-desc">We handle everything. You stay on the tools.</div>
         <div class="plan-price" style="color:#3B82F6">$499</div>
@@ -878,7 +870,7 @@
           <div class="plan-feat"><span class="feat-check">✓</span>Google Posts — first month written & published for you</div>
           <div class="plan-feat"><span class="feat-check">✓</span>90-day visibility re-audit included — we check back in and measure your growth</div>
         </div>
-        <button class="plan-cta" style="background:#3B82F6;color:#fff;border:none;font-family:'Sora',sans-serif;font-weight:700;font-size:15px;width:100%;padding:14px;border-radius:10px;cursor:pointer;" onclick="openModal('modal-dfy')">Get It Done For Me →</button>
+        <button class="plan-cta" style="background:var(--blue-strong);color:#fff;border:none;font-family:'Sora',sans-serif;font-weight:700;font-size:15px;width:100%;padding:14px;border-radius:10px;cursor:pointer;" onclick="openModal('modal-dfy')">Get It Done For Me →</button>
       </div>
 
     </div>
@@ -900,18 +892,10 @@
   </div>
 </section>
 
+</main>
+
 <!-- ═══════════ LEAD FORM MODALS ═══════════ -->
 
-<!-- Hidden static forms so Netlify's build bot can detect & register them -->
-<form name="free-audit" data-netlify="true" netlify-honeypot="bot-field" hidden>
-  <input type="text" name="Full Name" /><input type="text" name="Business Name" /><input type="email" name="Email Address" /><input type="tel" name="Mobile Number" /><input type="text" name="Business Suburb" /><input type="text" name="Website URL" /><input type="text" name="Focus Area" /><input type="text" name="GBP URL" /><input type="text" name="Preferred Contact Method" /><input type="text" name="Referral Source" />
-</form>
-<form name="growth-plan" data-netlify="true" netlify-honeypot="bot-field" hidden>
-  <input type="text" name="Full Name" /><input type="text" name="Business Name" /><input type="email" name="Email Address" /><input type="tel" name="Mobile Number" /><input type="text" name="Business Suburb" /><input type="text" name="Website URL" /><input type="text" name="GBP URL" /><input type="text" name="Trade Industry" /><input type="text" name="Service Areas" /><input type="text" name="Competitors" /><input type="text" name="Biggest Visibility Challenge" /><input type="text" name="Monthly Enquiries" /><input type="text" name="Primary Goal" /><input type="text" name="Existing Marketing Company" /><input type="text" name="Referral Source" />
-</form>
-<form name="done-for-you" data-netlify="true" netlify-honeypot="bot-field" hidden>
-  <input type="text" name="Full Name" /><input type="text" name="Business Name" /><input type="email" name="Email Address" /><input type="tel" name="Mobile Number" /><input type="text" name="Business Suburb" /><input type="text" name="Website URL" /><input type="text" name="GBP URL" /><input type="text" name="Trade Industry" /><input type="text" name="Service Areas" /><input type="text" name="Competitors" /><input type="text" name="Services Interested In" /><input type="text" name="Business Size" /><input type="text" name="Urgency" /><input type="text" name="Preferred Contact Method" /><input type="text" name="Referral Source" />
-</form>
 
 <!-- FREE AUDIT MODAL -->
 <div class="modal-overlay" id="modal-free">
@@ -922,6 +906,7 @@
 
     <form name="free-audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event, 'modal-free')">
       <input type="hidden" name="form-name" value="free-audit" />
+      <input type="hidden" name="plan" value="fva" />
       <p class="hp-field"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
       <div class="form-row">
@@ -960,7 +945,7 @@
         </select>
       </div>
       <div class="form-row">
-        <label>Google Business Profile URL <span style="color:#94A3B8; font-weight:400;">(optional)</span></label>
+        <label>Google Business Profile URL <span style="color:#64748B; font-weight:400;">(optional)</span></label>
         <input type="text" name="GBP URL" placeholder="e.g. google.com/maps/place/your-business-name">
         <span class="hint">Paste your Google Business Profile link if you know it — most people don't, but it saves us time if you do.</span>
       </div>
@@ -1009,6 +994,7 @@
 
     <form name="growth-plan" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event, 'modal-growth')">
       <input type="hidden" name="form-name" value="growth-plan" />
+      <input type="hidden" name="plan" value="growth" />
       <p class="hp-field"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
       <div class="form-row">
@@ -1126,6 +1112,7 @@
 
     <form name="done-for-you" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event, 'modal-dfy')">
       <input type="hidden" name="form-name" value="done-for-you" />
+      <input type="hidden" name="plan" value="dfy" />
       <p class="hp-field"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
       <div class="form-row">
@@ -1221,8 +1208,10 @@
         </select>
       </div>
 
+      <p class="form-note">To get started, please add <a href="mailto:jeff@visibilityhq.com.au">jeff@visibilityhq.com.au</a> as a <strong>Manager</strong> on your Google Business Profile — see <a href="https://support.google.com/business/answer/3403100" target="_blank" rel="noopener">Google's official guide to adding managers</a>. We never need, and will never ask for, your Google password.</p>
+
       <p class="form-consent">By submitting, you agree to be contacted about your enquiry.</p>
-      <button type="submit" class="form-submit-btn" style="background:#3B82F6;">Get It Done For Me →</button>
+      <button type="submit" class="form-submit-btn" style="background:var(--blue-strong);">Get It Done For Me →</button>
     </form>
 
     <div class="form-success" id="success-modal-dfy">
