@@ -414,23 +414,7 @@
   }
   .plan-cta.solid:hover { background: var(--amber-light); }
 
-  /* ─── INLINE LEAD FORMS ───────────────────── */
-  .plan-col { display: flex; flex-direction: column; gap: 20px; }
-  .lead-form {
-    text-align: left;
-    background: var(--slate);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 24px;
-  }
-  .form-success.lead-form { display: none; text-align: center; }
-  .form-success.lead-form.active { display: block; }
-  .lead-form-title {
-    font-family: 'Sora', sans-serif;
-    font-weight: 700;
-    font-size: 17px;
-    margin-bottom: 16px;
-  }
+  /* ─── FORM NOTES ────────────────────────── */
   .form-note {
     font-size: 13px;
     line-height: 1.55;
@@ -723,7 +707,7 @@
       <text x="84" y="50" font-family="'Sora',sans-serif" font-size="9" fill="#6B7A8F" letter-spacing="3">LOCAL VISIBILITY AUDITS</text>
     </svg>
   </div>
-  <a href="#cta" class="nav-cta">Get Free Audit →</a>
+  <a href="#cta" class="nav-cta" onclick="openModal('modal-free'); return false;">Get Free Audit →</a>
 </nav>
 
 <main id="main">
@@ -744,7 +728,7 @@
         We run a free local visibility audit for trades and small businesses in Perth's north. Find out exactly where you're losing calls — and what to do about it.
       </p>
       <div class="hero-actions">
-        <a href="#cta" class="btn-primary">
+        <a href="#cta" class="btn-primary" onclick="openModal('modal-free'); return false;">
           Get Your Free Audit →
         </a>
         <a href="#how" class="btn-ghost">
@@ -834,7 +818,6 @@
     <div class="pricing-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 1100px;">
 
       <!-- Free Audit -->
-      <div class="plan-col">
       <div class="plan-card fade-up" style="border:2px solid #0F1B2D;">
         <div class="plan-name">Free Visibility Audit</div>
         <div class="plan-desc">See exactly where your business stands in local search — no cost, no obligation.</div>
@@ -849,43 +832,8 @@
         </div>
         <button class="plan-cta" style="background:var(--amber);color:var(--navy);border:none;" onclick="openModal('modal-free')">Get My Free Audit →</button>
       </div>
-        <form class="lead-form" name="fva-lead" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event, 'fva-form')" aria-labelledby="fva-form-title">
-          <input type="hidden" name="form-name" value="fva-lead" />
-          <input type="hidden" name="plan" value="fva" />
-          <p class="hp-field"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
-          <h3 class="lead-form-title" id="fva-form-title">Request your free audit</h3>
-          <div class="form-row">
-            <label for="fva-name">Your name <span class="req" aria-hidden="true">*</span></label>
-            <input type="text" id="fva-name" name="name" autocomplete="name" required>
-          </div>
-          <div class="form-row">
-            <label for="fva-business-name">Business name <span class="req" aria-hidden="true">*</span></label>
-            <input type="text" id="fva-business-name" name="business-name" autocomplete="organization" required>
-          </div>
-          <div class="form-row">
-            <label for="fva-email">Email <span class="req" aria-hidden="true">*</span></label>
-            <input type="email" id="fva-email" name="email" autocomplete="email" required>
-          </div>
-          <div class="form-row">
-            <label for="fva-phone">Phone <span class="req" aria-hidden="true">*</span></label>
-            <input type="tel" id="fva-phone" name="phone" autocomplete="tel" required>
-          </div>
-          <div class="form-row">
-            <label for="fva-suburb">Suburb <span class="req" aria-hidden="true">*</span></label>
-            <input type="text" id="fva-suburb" name="suburb" autocomplete="address-level2" required>
-          </div>
-          <p class="form-consent">By submitting, you agree to be contacted about your enquiry.</p>
-          <button type="submit" class="form-submit-btn" style="background:var(--amber);color:var(--navy);">Get My Free Audit →</button>
-        </form>
-        <div class="form-success lead-form" id="success-fva-form" role="status">
-          <div class="form-success-icon">✓</div>
-          <div class="modal-title" style="text-align:center;">You're all set!</div>
-          <div class="modal-sub" style="text-align:center;">We've got your details and will be in touch within 24 hours.</div>
-        </div>
-      </div>
 
       <!-- Level 3: Growth Plan -->
-      <div class="plan-col">
       <div class="plan-card fade-up" style="transition-delay:0.1s; border:2px solid #0F1B2D;">
         <div class="plan-name">Visibility Growth Plan</div>
         <div class="plan-desc">A custom step-by-step roadmap of exactly what's costing you local jobs — with a clear 30-day fix-it plan you can work through at your own pace.</div>
@@ -902,47 +850,8 @@
         </div>
         <button class="plan-cta" style="background:#14B8A6;border:none;color:#0F1B2D;font-family:'Sora',sans-serif;font-weight:700;font-size:15px;width:100%;padding:14px;border-radius:10px;cursor:pointer;" onclick="openModal('modal-growth')">Get My Roadmap →</button>
       </div>
-        <form class="lead-form" name="growth-lead" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event, 'growth-form')" aria-labelledby="growth-form-title">
-          <input type="hidden" name="form-name" value="growth-lead" />
-          <input type="hidden" name="plan" value="growth" />
-          <p class="hp-field"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
-          <h3 class="lead-form-title" id="growth-form-title">Get your Growth Plan</h3>
-          <div class="form-row">
-            <label for="growth-name">Your name <span class="req" aria-hidden="true">*</span></label>
-            <input type="text" id="growth-name" name="name" autocomplete="name" required>
-          </div>
-          <div class="form-row">
-            <label for="growth-business-name">Business name <span class="req" aria-hidden="true">*</span></label>
-            <input type="text" id="growth-business-name" name="business-name" autocomplete="organization" required>
-          </div>
-          <div class="form-row">
-            <label for="growth-email">Email <span class="req" aria-hidden="true">*</span></label>
-            <input type="email" id="growth-email" name="email" autocomplete="email" required>
-          </div>
-          <div class="form-row">
-            <label for="growth-phone">Phone <span class="req" aria-hidden="true">*</span></label>
-            <input type="tel" id="growth-phone" name="phone" autocomplete="tel" required>
-          </div>
-          <div class="form-row">
-            <label for="growth-suburb">Suburb <span class="req" aria-hidden="true">*</span></label>
-            <input type="text" id="growth-suburb" name="suburb" autocomplete="address-level2" required>
-          </div>
-          <div class="form-row">
-            <label for="growth-challenge">What's your biggest challenge getting found online? <span class="req" aria-hidden="true">*</span></label>
-            <textarea id="growth-challenge" name="challenge" rows="3" required></textarea>
-          </div>
-          <p class="form-consent">By submitting, you agree to be contacted about your enquiry.</p>
-          <button type="submit" class="form-submit-btn" style="background:#14B8A6;color:#0F1B2D;">Get My Roadmap →</button>
-        </form>
-        <div class="form-success lead-form" id="success-growth-form" role="status">
-          <div class="form-success-icon">✓</div>
-          <div class="modal-title" style="text-align:center;">You're all set!</div>
-          <div class="modal-sub" style="text-align:center;">We've got your details and will be in touch within 24 hours.</div>
-        </div>
-      </div>
 
       <!-- Level 4: DFY -->
-      <div class="plan-col">
       <div class="plan-card featured fade-up" style="transition-delay:0.2s">
         <div class="plan-badge" style="background:var(--blue-strong);color:#fff;">Most Popular</div>
         <div class="plan-name">Done For You</div>
@@ -962,45 +871,6 @@
           <div class="plan-feat"><span class="feat-check">✓</span>90-day visibility re-audit included — we check back in and measure your growth</div>
         </div>
         <button class="plan-cta" style="background:var(--blue-strong);color:#fff;border:none;font-family:'Sora',sans-serif;font-weight:700;font-size:15px;width:100%;padding:14px;border-radius:10px;cursor:pointer;" onclick="openModal('modal-dfy')">Get It Done For Me →</button>
-      </div>
-        <form class="lead-form" name="dfy-lead" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event, 'dfy-form')" aria-labelledby="dfy-form-title">
-          <input type="hidden" name="form-name" value="dfy-lead" />
-          <input type="hidden" name="plan" value="dfy" />
-          <p class="hp-field"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
-          <h3 class="lead-form-title" id="dfy-form-title">Get it done for you</h3>
-          <div class="form-row">
-            <label for="dfy-name">Your name <span class="req" aria-hidden="true">*</span></label>
-            <input type="text" id="dfy-name" name="name" autocomplete="name" required>
-          </div>
-          <div class="form-row">
-            <label for="dfy-business-name">Business name <span class="req" aria-hidden="true">*</span></label>
-            <input type="text" id="dfy-business-name" name="business-name" autocomplete="organization" required>
-          </div>
-          <div class="form-row">
-            <label for="dfy-email">Email <span class="req" aria-hidden="true">*</span></label>
-            <input type="email" id="dfy-email" name="email" autocomplete="email" required>
-          </div>
-          <div class="form-row">
-            <label for="dfy-phone">Phone <span class="req" aria-hidden="true">*</span></label>
-            <input type="tel" id="dfy-phone" name="phone" autocomplete="tel" required>
-          </div>
-          <div class="form-row">
-            <label for="dfy-suburb">Suburb <span class="req" aria-hidden="true">*</span></label>
-            <input type="text" id="dfy-suburb" name="suburb" autocomplete="address-level2" required>
-          </div>
-          <div class="form-row">
-            <label for="dfy-gbp-listing">Business name / GBP listing <span class="req" aria-hidden="true">*</span></label>
-            <input type="text" id="dfy-gbp-listing" name="gbp-listing" placeholder="Business name as it appears on Google, or your Maps link" required>
-          </div>
-          <p class="form-note">To get started, please add <a href="mailto:jeff@visibilityhq.com.au">jeff@visibilityhq.com.au</a> as a <strong>Manager</strong> on your Google Business Profile — see <a href="https://support.google.com/business/answer/3403100" target="_blank" rel="noopener">Google's official guide to adding managers</a>. We never need, and will never ask for, your Google password.</p>
-          <p class="form-consent">By submitting, you agree to be contacted about your enquiry.</p>
-          <button type="submit" class="form-submit-btn" style="background:var(--blue-strong);color:#fff;">Get It Done For Me →</button>
-        </form>
-        <div class="form-success lead-form" id="success-dfy-form" role="status">
-          <div class="form-success-icon">✓</div>
-          <div class="modal-title" style="text-align:center;">You're all set!</div>
-          <div class="modal-sub" style="text-align:center;">We've got your details and will be in touch within 24 hours.</div>
-        </div>
       </div>
 
     </div>
@@ -1026,16 +896,6 @@
 
 <!-- ═══════════ LEAD FORM MODALS ═══════════ -->
 
-<!-- Hidden static forms so Netlify's build bot can detect & register them -->
-<form name="free-audit" data-netlify="true" netlify-honeypot="bot-field" hidden>
-  <input type="text" name="Full Name" /><input type="text" name="Business Name" /><input type="email" name="Email Address" /><input type="tel" name="Mobile Number" /><input type="text" name="Business Suburb" /><input type="text" name="Website URL" /><input type="text" name="Focus Area" /><input type="text" name="GBP URL" /><input type="text" name="Preferred Contact Method" /><input type="text" name="Referral Source" />
-</form>
-<form name="growth-plan" data-netlify="true" netlify-honeypot="bot-field" hidden>
-  <input type="text" name="Full Name" /><input type="text" name="Business Name" /><input type="email" name="Email Address" /><input type="tel" name="Mobile Number" /><input type="text" name="Business Suburb" /><input type="text" name="Website URL" /><input type="text" name="GBP URL" /><input type="text" name="Trade Industry" /><input type="text" name="Service Areas" /><input type="text" name="Competitors" /><input type="text" name="Biggest Visibility Challenge" /><input type="text" name="Monthly Enquiries" /><input type="text" name="Primary Goal" /><input type="text" name="Existing Marketing Company" /><input type="text" name="Referral Source" />
-</form>
-<form name="done-for-you" data-netlify="true" netlify-honeypot="bot-field" hidden>
-  <input type="text" name="Full Name" /><input type="text" name="Business Name" /><input type="email" name="Email Address" /><input type="tel" name="Mobile Number" /><input type="text" name="Business Suburb" /><input type="text" name="Website URL" /><input type="text" name="GBP URL" /><input type="text" name="Trade Industry" /><input type="text" name="Service Areas" /><input type="text" name="Competitors" /><input type="text" name="Services Interested In" /><input type="text" name="Business Size" /><input type="text" name="Urgency" /><input type="text" name="Preferred Contact Method" /><input type="text" name="Referral Source" />
-</form>
 
 <!-- FREE AUDIT MODAL -->
 <div class="modal-overlay" id="modal-free">
@@ -1046,6 +906,7 @@
 
     <form name="free-audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event, 'modal-free')">
       <input type="hidden" name="form-name" value="free-audit" />
+      <input type="hidden" name="plan" value="fva" />
       <p class="hp-field"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
       <div class="form-row">
@@ -1133,6 +994,7 @@
 
     <form name="growth-plan" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event, 'modal-growth')">
       <input type="hidden" name="form-name" value="growth-plan" />
+      <input type="hidden" name="plan" value="growth" />
       <p class="hp-field"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
       <div class="form-row">
@@ -1250,6 +1112,7 @@
 
     <form name="done-for-you" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event, 'modal-dfy')">
       <input type="hidden" name="form-name" value="done-for-you" />
+      <input type="hidden" name="plan" value="dfy" />
       <p class="hp-field"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
       <div class="form-row">
@@ -1344,6 +1207,8 @@
           <option>Other</option>
         </select>
       </div>
+
+      <p class="form-note">To get started, please add <a href="mailto:jeff@visibilityhq.com.au">jeff@visibilityhq.com.au</a> as a <strong>Manager</strong> on your Google Business Profile — see <a href="https://support.google.com/business/answer/3403100" target="_blank" rel="noopener">Google's official guide to adding managers</a>. We never need, and will never ask for, your Google password.</p>
 
       <p class="form-consent">By submitting, you agree to be contacted about your enquiry.</p>
       <button type="submit" class="form-submit-btn" style="background:var(--blue-strong);">Get It Done For Me →</button>
