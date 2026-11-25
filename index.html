@@ -1,68 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Visibility HQ — Be Found. Get Calls. Win Jobs.</title>
-<meta name="description" content="Free local visibility audits for Perth tradies and small businesses. See how you rank on Google Maps against local competitors, then fix it with a $149 roadmap or $499 done-for-you Google Business Profile optimisation.">
+<title>Free Local Visibility Check for Perth Tradies | VisibilityHQ</title>
+<meta name="description" content="Free Visibility Check for Perth tradies: we check how your business appears across Google, your website, reviews, social media and local listings.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Local Visibility Check for Perth Tradies | VisibilityHQ">
+<meta property="og:description" content="Free Visibility Check for Perth tradies: we check how your business appears across Google, your website, reviews, social media and local listings.">
+<meta property="og:url" content="https://visibilityhq.com.au/">
+<meta property="og:locale" content="en_AU">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Local Visibility Check for Perth Tradies | VisibilityHQ">
+<meta name="twitter:description" content="Free Visibility Check for Perth tradies: we check how your business appears across Google, your website, reviews, social media and local listings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"VisibilityHQ","email":"jeff@visibilityhq.com.au","telephone":"+61494741615","address":{"@type":"PostalAddress","addressLocality":"Perth","addressRegion":"WA","addressCountry":"AU"}}
+</script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
     --navy: #0F1B2D;
-    --navy-mid: #1A2E47;
     --amber: #F5A623;
     --amber-light: #FFC85A;
     --white: #FFFFFF;
     --slate: #F7F8FA;
-    --muted: #556274;       /* secondary text on light backgrounds (≥4.5:1 on white & slate) */
-    --muted-dark: #94A3B8;  /* secondary text on navy backgrounds */
-    --amber-text: #B45309;  /* amber for small text on light backgrounds */
-    --teal-text: #0F766E;
-    --blue-strong: #2563EB; /* blue backgrounds behind white text */
+    --muted: #556274;       /* secondary text on light backgrounds */
+    --muted-dark: #A5B5CC;  /* secondary text on navy backgrounds */
+    --amber-text: #A14808;  /* amber for small text on light backgrounds */
     --border: #E2E8F0;
-    --green: #22C55E;
+    --card: #14233A;        /* shared card background: steps, pricing, sample */
+    --card-line: #2A4262;
+    --card-track: #0F1B2E;
+    --card-text: #EAF0F8;
+    --teal: #2CC4B4;
+    --blue: #6EA8FF;
+    --slate-bar: #9FB3D1;
+    --blue-strong: #1D4ED8;
   }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
 
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     color: var(--navy);
     background: var(--white);
     -webkit-font-smoothing: antialiased;
   }
+  :focus-visible { outline: 3px solid #2563EB; outline-offset: 2px; }
+  nav :focus-visible, #hero :focus-visible, #how :focus-visible, #pricing .plan-card :focus-visible,
+  #cta :focus-visible, #contact :focus-visible, footer :focus-visible { outline-color: var(--amber-light); }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .skip-link { position: fixed; left: 12px; top: -80px; z-index: 200; background: #fff; color: var(--navy); padding: 12px 18px; border-radius: 8px; font-weight: 600; }
+  .skip-link:focus { top: 10px; }
 
   /* ─── NAV ─────────────────────────────────── */
-  nav {
+  .site-nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     background: rgba(15, 27, 45, 0.96);
     backdrop-filter: blur(10px);
     padding: 0 24px;
     height: 64px;
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
   }
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    height: 40px;
-  }
-  .nav-logo svg {
-    height: 40px;
-    width: auto;
-  }
+  .nav-logo { display: flex; align-items: center; height: 40px; }
+  .nav-logo svg { height: 40px; width: auto; }
   .nav-cta {
+    display: inline-flex; align-items: center; min-height: 44px;
     background: var(--amber);
     color: var(--navy);
     font-family: 'Sora', sans-serif;
     font-weight: 700;
     font-size: 14px;
-    padding: 10px 20px;
+    padding: 0 18px;
     border-radius: 8px;
-    border: none;
-    cursor: pointer;
     text-decoration: none;
+    white-space: nowrap;
     transition: background 0.2s;
   }
   .nav-cta:hover { background: var(--amber-light); }
@@ -70,9 +86,7 @@
   /* ─── HERO ────────────────────────────────── */
   #hero {
     background: var(--navy);
-    min-height: 100vh;
-    display: flex; align-items: center;
-    padding: 100px 24px 60px;
+    padding: 112px 24px 72px;
     position: relative;
     overflow: hidden;
   }
@@ -95,164 +109,137 @@
   .hero-inner {
     max-width: 1100px;
     margin: 0 auto;
-    width: 100%;
     display: grid;
-    grid-template-columns: 3fr 2fr; /* 60/40: hero text / sample report */
-    gap: 60px;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 440px);
+    gap: 56px;
     align-items: center;
     position: relative;
   }
+  .hero-inner .vhq-card { margin: 0 auto; }
   .hero-eyebrow {
-    display: inline-flex; align-items: center; gap: 8px;
+    display: inline-block;
     background: rgba(245,166,35,0.12);
     border: 1px solid rgba(245,166,35,0.3);
     color: var(--amber);
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 1px;
+    line-height: 1.5;
     text-transform: uppercase;
     padding: 6px 14px;
-    border-radius: 100px;
+    border-radius: 18px;
     margin-bottom: 24px;
   }
-  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--amber); animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-
   .hero-h1 {
     font-family: 'Sora', sans-serif;
     font-weight: 800;
-    font-size: clamp(36px, 5vw, 58px);
+    font-size: clamp(34px, 5vw, 54px);
     line-height: 1.1;
     color: var(--white);
     letter-spacing: -1.5px;
     margin-bottom: 20px;
   }
-  .hero-h1 em { font-style: normal; color: var(--amber); }
   .hero-sub {
     font-size: 17px;
     line-height: 1.65;
-    color: #94A3B8;
-    margin-bottom: 36px;
-    max-width: 480px;
+    color: #C9D6EA;
+    margin-bottom: 32px;
+    max-width: 540px;
   }
   .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn-primary {
+  .hero-line { font-size: 14px; color: var(--muted-dark); margin-top: 16px; }
+  .btn-primary, .btn-ghost {
     display: inline-flex; align-items: center; gap: 8px;
+    font-size: 16px;
+    padding: 16px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-primary {
     background: var(--amber);
     color: var(--navy);
     font-family: 'Sora', sans-serif;
     font-weight: 700;
-    font-size: 16px;
-    padding: 16px 28px;
-    border-radius: 10px;
-    border: none; cursor: pointer;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
+    border: none;
+    transition: background 0.2s;
   }
-  .btn-primary:hover { background: var(--amber-light); transform: translateY(-1px); }
+  .btn-primary:hover { background: var(--amber-light); }
   .btn-ghost {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: transparent;
-    color: #94A3B8;
-    font-family: 'Inter', sans-serif;
+    color: #C9D6EA;
     font-weight: 500;
-    font-size: 15px;
-    padding: 16px 20px;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.12);
-    cursor: pointer; text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.35);
     transition: color 0.2s, border-color 0.2s;
   }
-  .btn-ghost:hover { color: var(--white); border-color: rgba(255,255,255,0.3); }
+  .btn-ghost:hover { color: var(--white); border-color: var(--white); }
 
-  /* ─── SCORE WIDGET ────────────────────────── */
-  .score-card {
-    background: var(--navy-mid);
-    border: 1px solid rgba(245,166,35,0.2);
-    border-radius: 20px;
-    padding: 32px;
-    position: relative;
+  /* ─── SAMPLE REPORT CARD (locked) ─────────── */
+  .vhq-card{
+    --vhq-card:#14233a; --vhq-track:#0f1b2e; --vhq-line:#2a4262;
+    --vhq-text:#eaf0f8; --vhq-muted:#a5b5cc; --vhq-orange:#f5a623;
+    --vhq-blue:#7db4ff; --vhq-green:#3ecf9e;
+    width:100%; max-width:440px; box-sizing:border-box; padding:22px;
+    background:var(--vhq-card); color:var(--vhq-text);
+    border:1px solid var(--vhq-line); border-radius:18px;
+    box-shadow:0 18px 40px rgba(0,0,0,.35);
   }
-  .score-card-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--muted-dark);
-    margin-bottom: 20px;
-  }
-  .score-meter {
-    display: flex; align-items: flex-end; gap: 4px;
-    margin-bottom: 16px;
-    height: 80px;
-  }
-  .score-bar {
-    flex: 1;
-    border-radius: 4px 4px 0 0;
-    transition: height 1.2s cubic-bezier(0.4,0,0.2,1);
-  }
-  .score-number {
-    font-family: 'Sora', sans-serif;
-    font-size: 52px;
-    font-weight: 800;
-    color: var(--white);
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-  .score-number span { font-size: 24px; color: var(--muted-dark); }
-  .score-status {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 13px; font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 6px;
-    margin-bottom: 24px;
-  }
-  .status-danger { background: rgba(239,68,68,0.15); color: #FCA5A5; }
+  .vhq-card *{box-sizing:border-box}
+  .vhq-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  .vhq-eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--vhq-muted);font-weight:600}
+  .vhq-example{font-size:12px;font-weight:600;color:var(--vhq-orange);
+    border:1px dashed var(--vhq-orange);border-radius:999px;padding:3px 10px}
 
-  .score-gaps {
-    display: flex; flex-direction: column; gap: 8px;
-  }
-  .gap-item {
-    display: flex; align-items: center; gap: 10px;
-    background: rgba(15,27,45,0.6);
-    border-radius: 8px;
-    padding: 10px 14px;
-  }
-  .gap-icon {
-    width: 28px; height: 28px;
-    border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 14px;
-    flex-shrink: 0;
-  }
-  .gap-icon.red { background: rgba(239,68,68,0.15); }
-  .gap-icon.yellow { background: rgba(245,166,35,0.15); }
-  .gap-text { font-size: 13px; color: #CBD5E1; flex: 1; }
-  .gap-pts { font-size: 12px; font-weight: 600; color: var(--muted-dark); }
+  .vhq-score{display:flex;align-items:baseline;gap:6px;margin:14px 0 4px}
+  .vhq-score strong{font-size:60px;line-height:1;font-weight:800;letter-spacing:-.02em}
+  .vhq-score span{font-size:22px;color:var(--vhq-muted);font-weight:600}
+  .vhq-score .vhq-status{margin-left:auto;align-self:center;font-size:13px;font-weight:700;color:#1a1204;
+    background:var(--vhq-orange);border-radius:999px;padding:5px 12px}
+  .vhq-note{margin:0 0 18px;font-size:13px;color:var(--vhq-muted);line-height:1.45}
 
-  .score-footer {
-    display: flex; align-items: center; justify-content: space-between;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    font-size: 12px;
-    color: var(--muted-dark);
-  }
-  .score-badge {
-    display: inline-flex; align-items: center; gap: 4px;
-    background: rgba(34,197,94,0.12);
-    color: var(--green);
-    font-weight: 600;
-    padding: 4px 8px;
-    border-radius: 6px;
-  }
+  .vhq-h{margin:0 0 10px;font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--vhq-text)}
+  .vhq-cats{list-style:none;margin:0 0 20px;padding:0;display:grid;gap:10px}
+  .vhq-cat{display:grid;grid-template-columns:132px 1fr 44px;align-items:center;gap:10px;font-size:13.5px}
+  .vhq-cat .vhq-bar{height:9px;border-radius:99px;background:var(--vhq-track);overflow:hidden}
+  .vhq-cat .vhq-bar i{display:block;height:100%;border-radius:99px;background:var(--vhq-orange)}
+  .vhq-cat b{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
+  .vhq-cat b small{color:var(--vhq-muted);font-weight:500}
 
-  /* ─── HOW IT WORKS ────────────────────────── */
-  #how {
-    background: var(--slate);
-    padding: 96px 24px;
+  .vhq-finds{list-style:none;margin:0 0 20px;padding:0;display:grid;gap:8px}
+  .vhq-find{display:grid;gap:5px;padding:11px 12px;background:var(--vhq-track);border-radius:12px;font-size:13.5px;line-height:1.4}
+  .vhq-tag{justify-self:start;font-size:12px;font-weight:700;letter-spacing:.03em;border-radius:6px;padding:2px 8px}
+  .vhq-tag.fix{background:var(--vhq-orange);color:#1a1204}
+  .vhq-tag.consider{border:1px solid var(--vhq-blue);color:var(--vhq-blue)}
+  .vhq-tag.optional{border:1px solid var(--vhq-muted);color:var(--vhq-muted)}
+
+  .vhq-cmp{margin:0 0 18px;padding-top:16px;border-top:1px solid var(--vhq-line);display:grid;gap:8px;font-size:13px}
+  .vhq-cmp-row{display:grid;grid-template-columns:132px 1fr 36px;align-items:center;gap:10px}
+  .vhq-cmp-row .vhq-bar{height:9px;border-radius:99px;background:var(--vhq-track);overflow:hidden}
+  .vhq-cmp-row .vhq-bar i{display:block;height:100%;border-radius:99px}
+  .vhq-cmp-row b{text-align:right;font-variant-numeric:tabular-nums}
+  .vhq-you i{background:var(--vhq-orange)} .vhq-them i{background:var(--vhq-blue)}
+  .vhq-cmp-note{margin:0;font-size:13px;color:var(--vhq-muted)}
+
+  .vhq-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  .vhq-findnote{margin:-10px 0 20px;font-size:13px;color:var(--vhq-muted);line-height:1.45}
+  .vhq-foot a.vhq-btn{font-size:14px;font-weight:700;color:#1a1204;background:var(--vhq-orange);
+    border-radius:10px;padding:10px 14px;text-decoration:none}
+  .vhq-foot a.vhq-btn:hover,.vhq-foot a.vhq-btn:focus{filter:brightness(1.08);text-decoration:none}
+  .vhq-foot a{font-size:13px;color:var(--vhq-blue);text-decoration:none;font-weight:600}
+  .vhq-foot a:hover,.vhq-foot a:focus{text-decoration:underline}
+
+  @media (max-width:420px){
+    .vhq-card{padding:18px}
+    .vhq-score strong{font-size:52px}
+    .vhq-cat,.vhq-cmp-row{grid-template-columns:104px 1fr 40px;font-size:13px}
   }
+  /* Page-level additions: heading reset and 44px tap targets */
+  .vhq-eyebrow { margin: 0; }
+  .vhq-foot a { display: inline-flex; align-items: center; min-height: 44px; }
+
+  /* ─── SECTIONS ────────────────────────────── */
+  .section { padding: 88px 24px; }
   .section-inner { max-width: 1100px; margin: 0 auto; }
+  .narrow { max-width: 800px; }
   .section-eyebrow {
     font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -268,205 +255,78 @@
     line-height: 1.15;
     margin-bottom: 16px;
   }
-  .section-lead {
-    font-size: 17px;
-    color: var(--muted);
-    line-height: 1.65;
-    max-width: 540px;
-    margin-bottom: 56px;
-  }
+  .section-lead { font-size: 17px; color: var(--muted); line-height: 1.65; max-width: 660px; margin-bottom: 40px; }
+  .prose p { font-size: 16px; line-height: 1.65; margin-bottom: 16px; }
+  .prose li { font-size: 16px; line-height: 1.65; }
+  .bg-white { background: var(--white); }
+  .bg-slate { background: var(--slate); }
 
-  .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .step-card {
-    background: var(--white);
+  #how { background: #0B1424; color: var(--white); }
+  #how .section-eyebrow { color: var(--amber); }
+  #how .section-lead { color: var(--muted-dark); }
+  #pricing { background: #E9EEF6; }
+  #pricing .section-lead { color: #44587A; }
+
+  /* ─── STEP AND PRICING CARDS (one shared style) ─ */
+  .card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .step-card, .plan-card {
+    background: var(--card);
+    color: var(--card-text);
+    border: 1px solid var(--card-line);
     border-radius: 16px;
-    padding: 32px 28px;
-    border: 1px solid var(--border);
+    padding: 26px 24px 24px;
     position: relative;
     overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex; flex-direction: column;
   }
-  .step-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(15,27,45,0.1); }
-  .step-num {
-    font-family: 'Sora', sans-serif;
-    font-weight: 800;
-    font-size: 11px;
-    letter-spacing: 2px;
-    color: var(--amber-text);
-    margin-bottom: 16px;
-  }
-  .step-icon {
-    font-size: 28px;
-    margin-bottom: 16px;
-    display: block;
-  }
-  .step-title {
-    font-family: 'Sora', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    letter-spacing: -0.3px;
-    margin-bottom: 10px;
-  }
-  .step-desc { font-size: 14px; line-height: 1.65; color: var(--muted); }
-  .step-accent {
-    position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, var(--amber), var(--amber-light));
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-  .step-card:hover .step-accent { opacity: 1; }
+  .accent-orange { --accent: var(--amber); }
+  .accent-teal { --accent: var(--teal); }
+  .accent-blue { --accent: var(--blue); }
+  .accent-slate { --accent: var(--slate-bar); }
 
-  /* ─── PRICING ─────────────────────────────── */
-  #pricing {
-    background: var(--white);
-    padding: 96px 24px;
+  .step-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--card-track); color: var(--card-text);
+    display: grid; place-items: center; margin-bottom: 14px;
   }
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 24px;
-    max-width: 860px;
-    margin: 0 auto;
-  }
-  .plan-card {
-    border-radius: 20px;
-    padding: 36px 32px;
-    border: 1px solid var(--border);
-    position: relative;
-  }
-  .plan-card.featured {
-    background: var(--navy);
-    border-color: var(--navy);
-    color: var(--white);
-  }
-  .plan-badge {
-    position: absolute;
-    top: -12px; left: 50%; transform: translateX(-50%);
-    background: var(--amber);
-    color: var(--navy);
-    font-family: 'Sora', sans-serif;
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 5px 16px;
-    border-radius: 100px;
-    white-space: nowrap;
-  }
-  .plan-name {
-    font-family: 'Sora', sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    margin-bottom: 6px;
-  }
-  .plan-desc { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
-  .plan-card.featured .plan-desc { color: #94A3B8; }
-  .plan-price {
-    font-family: 'Sora', sans-serif;
-    font-weight: 800;
-    font-size: 44px;
-    letter-spacing: -2px;
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-  .plan-price-note { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
-  .plan-card.featured .plan-price-note { color: #94A3B8; }
-  .plan-features { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
-  .plan-feat {
-    display: flex; align-items: flex-start; gap: 10px;
-    font-size: 14px; line-height: 1.5;
-  }
-  .feat-check {
-    width: 18px; height: 18px;
-    border-radius: 50%;
-    background: rgba(34,197,94,0.15);
-    color: var(--green);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 10px;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .plan-card.featured .feat-check { background: rgba(34,197,94,0.2); }
+  .step-num { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 1px; color: var(--accent); margin-bottom: 6px; }
+  .step-title { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 20px; margin-bottom: 4px; }
+  .step-tag { font-size: 14px; font-weight: 600; color: var(--muted-dark); margin-bottom: 12px; }
+  .step-desc { font-size: 15px; line-height: 1.6; color: #D3DEEE; margin-bottom: 12px; }
+  .step-fine { font-size: 14px; line-height: 1.55; color: var(--muted-dark); }
+
+  .plan-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: var(--accent); }
+  .plan-name { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 21px; margin-bottom: 8px; }
+  .plan-who { align-self: flex-start; font-size: 12px; font-weight: 600; color: var(--accent); border: 1px solid var(--accent); border-radius: 6px; padding: 2px 9px; margin-bottom: 12px; }
+  .plan-price { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 40px; letter-spacing: -1px; line-height: 1.1; }
+  .plan-price small { font: 600 14px 'Inter', sans-serif; letter-spacing: 0; color: var(--muted-dark); margin-left: 4px; white-space: nowrap; }
+  .plan-desc { font-size: 14px; line-height: 1.5; color: var(--muted-dark); margin: 8px 0 16px; }
+  .plan-features { list-style: none; display: grid; gap: 10px; margin-bottom: 18px; }
+  .plan-features li, .plan-reaudit { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 8px; font-size: 14px; line-height: 1.5; text-align: left; }
+  .plan-features li::before, .plan-reaudit::before { content: '✓'; font-weight: 800; color: var(--accent); }
+  .plan-bottom { margin-top: auto; }
+  .plan-reaudit { font-weight: 600; border-top: 1px solid var(--card-line); padding-top: 14px; margin-bottom: 14px; }
+  .plan-fine { font-size: 13px; line-height: 1.5; color: var(--muted-dark); margin-bottom: 14px; }
   .plan-cta {
-    width: 100%;
-    padding: 14px;
+    width: 100%; min-height: 48px;
+    padding: 12px 14px;
     border-radius: 10px;
     font-family: 'Sora', sans-serif;
     font-weight: 700;
     font-size: 15px;
     cursor: pointer;
-    border: none;
-    transition: all 0.2s;
-  }
-  .plan-cta.outline {
     background: transparent;
-    border: 1.5px solid var(--border);
-    color: var(--navy);
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    transition: filter 0.2s;
   }
-  .plan-cta.outline:hover { border-color: var(--navy); }
-  .plan-cta.solid {
-    background: var(--amber);
-    color: var(--navy);
-  }
-  .plan-cta.solid:hover { background: var(--amber-light); }
-
-  /* ─── FORM NOTES ────────────────────────── */
-  .form-note {
-    font-size: 13px;
-    line-height: 1.55;
-    color: #334155;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 12px 14px;
-    margin-top: 4px;
-  }
-  .form-note a { color: var(--blue-strong); font-weight: 600; }
-
-  /* ─── TESTIMONIALS ────────────────────────── */
-  #testimonials {
-    background: var(--slate);
-    padding: 96px 24px;
-  }
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .testimonial-card {
-    background: var(--white);
-    border-radius: 16px;
-    padding: 28px;
-    border: 1px solid var(--border);
-  }
-  .stars { color: var(--amber); font-size: 14px; margin-bottom: 14px; letter-spacing: 1px; }
-  .testimonial-text { font-size: 14px; line-height: 1.7; color: #374151; margin-bottom: 20px; }
-  .testimonial-author { display: flex; align-items: center; gap: 12px; }
-  .author-avatar {
-    width: 38px; height: 38px;
-    border-radius: 50%;
-    background: var(--navy);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Sora', sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    color: var(--amber);
-  }
-  .author-name { font-weight: 600; font-size: 14px; }
-  .author-biz { font-size: 12px; color: var(--muted); }
+  .plan-cta:hover { filter: brightness(1.15); }
+  .plan-cta.solid { background: var(--accent); color: var(--navy); }
+  .pricing-under { margin-top: 28px; text-align: center; font-weight: 600; line-height: 1.5; }
+  .pricing-small { margin-top: 6px; text-align: center; font-size: 14px; color: #44587A; }
 
   /* ─── CTA SECTION ─────────────────────────── */
-  #cta {
-    background: var(--navy);
-    padding: 96px 24px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
+  #cta { background: var(--navy); text-align: center; position: relative; overflow: hidden; }
   #cta::before {
     content: '';
     position: absolute; inset: 0;
@@ -476,48 +336,37 @@
     background-size: 60px 60px;
   }
   .cta-inner { position: relative; max-width: 620px; margin: 0 auto; }
-  .cta-h2 {
-    font-family: 'Sora', sans-serif;
-    font-weight: 800;
-    font-size: clamp(30px, 5vw, 48px);
-    letter-spacing: -1.5px;
-    color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 16px;
-  }
+  .cta-h2 { font-family: 'Sora', sans-serif; font-weight: 800; font-size: clamp(30px, 5vw, 48px); letter-spacing: -1.5px; color: var(--white); line-height: 1.1; margin-bottom: 16px; }
   .cta-h2 em { font-style: normal; color: var(--amber); }
-  .cta-sub { font-size: 16px; color: var(--muted-dark); line-height: 1.6; margin-bottom: 36px; }
-  .cta-guarantee {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 13px; color: var(--muted-dark); margin-top: 20px;
-  }
+  .cta-sub { font-size: 16px; color: #C9D6EA; line-height: 1.6; margin-bottom: 32px; }
+  .cta-guarantee { font-size: 14px; color: var(--muted-dark); margin-top: 20px; }
 
-  /* ─── FOOTER ──────────────────────────────── */
-  footer {
-    background: #08111E;
-    padding: 36px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  .footer-logo {
-    font-family: 'Sora', sans-serif;
-    font-weight: 800;
-    font-size: 16px;
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 12px;
-  }
-  .footer-logo svg {
-    height: 36px;
-    width: auto;
-  }
-  .footer-logo span { color: #3B82F6; }
-  .footer-meta { font-size: 13px; color: var(--muted-dark); }
+  /* ─── AFTER 90 DAYS, COMMITMENTS, FAQ, SCORING ─ */
+  .outcomes { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+  .outcomes li { border: 1px solid var(--border); border-radius: 12px; padding: 20px; background: var(--slate); }
+  .outcomes strong { display: block; font-family: 'Sora', sans-serif; margin-bottom: 4px; }
+  .ticks { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 28px; margin-top: 24px; }
+  .ticks li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 8px; }
+  .ticks li::before { content: '✓'; font-weight: 800; color: var(--amber-text); }
+  .faq details { border-bottom: 1px solid #CBD5E1; }
+  .faq summary { cursor: pointer; padding: 14px 0; min-height: 48px; line-height: 1.4; }
+  .faq summary h3 { display: inline; font-family: 'Sora', sans-serif; font-weight: 600; font-size: 16px; }
+  .faq details p { color: #334155; padding: 0 0 4px 18px; }
+  .score-list { padding-left: 22px; margin: 8px 0 20px; }
+  .score-list li { margin-bottom: 10px; }
+
+  /* ─── CONTACT + FOOTER ────────────────────── */
+  #contact { background: var(--navy); color: #D3DEEE; }
+  #contact .section-h2 { color: var(--white); }
+  .contact-list { list-style: none; margin-top: 20px; }
+  .contact-list li { min-height: 44px; display: flex; align-items: center; flex-wrap: wrap; gap: 0 8px; font-size: 16px; }
+  #contact a { color: var(--amber); display: inline-flex; align-items: center; min-height: 44px; }
+  #contact p a { display: inline; }
+  footer { background: #08111E; color: #B6C2D2; padding: 40px 24px; text-align: center; font-size: 14px; line-height: 1.6; }
+  .footer-logo svg { height: 36px; width: auto; margin-bottom: 12px; }
+  footer strong { color: var(--white); font-family: 'Sora', sans-serif; }
+  footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 22px; margin: 12px 0; }
+  footer nav a { color: #E2E8F0; min-height: 44px; display: inline-flex; align-items: center; }
 
   /* ─── LEAD FORM MODALS ──────────────────────────── */
   .modal-overlay {
@@ -543,93 +392,52 @@
   }
   .modal-close {
     position: absolute;
-    top: 18px;
-    right: 18px;
-    width: 32px;
-    height: 32px;
+    top: 12px;
+    right: 12px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     border: none;
     background: #F1F5F9;
     color: #475569;
     font-size: 18px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   .modal-close:hover { background: #E2E8F0; }
-  .modal-title {
-    font-family: 'Sora', sans-serif;
-    font-weight: 800;
-    font-size: 22px;
-    color: #0F1B2D;
-    margin-bottom: 6px;
-  }
-  .modal-sub {
-    font-size: 14px;
-    color: #64748B;
-    margin-bottom: 24px;
-    line-height: 1.5;
-  }
+  .modal-title { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 22px; line-height: 1.25; margin-bottom: 6px; padding-right: 40px; }
+  .modal-sub { font-size: 15px; color: var(--muted); margin-bottom: 24px; line-height: 1.5; }
   .form-row { margin-bottom: 16px; }
-  .form-row label {
-    display: block;
-    font-family: 'Sora', sans-serif;
-    font-weight: 600;
-    font-size: 13px;
-    color: #0F1B2D;
-    margin-bottom: 6px;
-  }
-  .form-row .req { color: #E11D48; }
-  .form-row .hint {
-    display: block;
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 4px;
-    font-weight: 400;
-  }
+  .form-row > label { display: block; font-family: 'Sora', sans-serif; font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+  .form-row .req { color: #BE123C; }
+  .form-row .opt { color: var(--muted); font-weight: 400; }
+  .form-row .hint { display: block; font-size: 13px; color: var(--muted); margin-top: 4px; }
   .form-row input[type="text"],
   .form-row input[type="email"],
   .form-row input[type="tel"],
-  .form-row input[type="url"],
   .form-row select,
   .form-row textarea {
     width: 100%;
+    min-height: 46px;
     padding: 11px 14px;
-    border: 1.5px solid #E2E8F0;
+    border: 1.5px solid #8592A6;
     border-radius: 8px;
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    color: #0F1B2D;
+    font-size: 16px;
+    color: var(--navy);
     background: #fff;
-    transition: border-color 0.15s;
   }
-  .form-row input:focus,
-  .form-row select:focus,
-  .form-row textarea:focus {
-    outline: none;
-    border-color: #3B82F6;
-  }
-  .form-row textarea { resize: vertical; min-height: 70px; }
-  .checkbox-group { display: flex; flex-direction: column; gap: 8px; }
-  .checkbox-group label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 400;
-    font-size: 14px;
-    color: #334155;
-    cursor: pointer;
-  }
-  .checkbox-group input { width: auto; }
-  .form-consent {
-    font-size: 12px;
-    color: var(--muted);
-    margin: 18px 0;
-    line-height: 1.5;
-  }
+  .form-row input::placeholder { color: #64748B; opacity: 1; }
+  .form-row textarea { resize: vertical; min-height: 80px; }
+  .form-row .check-label { display: flex; align-items: center; gap: 10px; min-height: 44px; margin: 6px 0 0; font: 400 14px/1.45 'Inter', sans-serif; color: #334155; cursor: pointer; }
+  .check-label input { width: 22px; height: 22px; flex-shrink: 0; }
+  .form-note { font-size: 14px; line-height: 1.55; color: #334155; background: var(--slate); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; margin-top: 4px; }
+  ul.form-note { padding-left: 30px; }
+  .form-note li + li { margin-top: 8px; }
+  .form-consent { font-size: 13px; color: var(--muted); margin: 18px 0; line-height: 1.5; }
+  .form-consent a { color: var(--blue-strong); }
   .form-submit-btn {
     width: 100%;
+    min-height: 48px;
     padding: 14px;
     border-radius: 10px;
     border: none;
@@ -637,22 +445,19 @@
     font-weight: 700;
     font-size: 15px;
     cursor: pointer;
-    color: #fff;
-    background: #0F1B2D;
+    color: var(--navy);
+    background: var(--amber);
   }
-  .form-submit-btn:hover { opacity: 0.9; }
+  .form-submit-btn:hover { background: var(--amber-light); }
   .hp-field { position: absolute; left: -9999px; top: -9999px; }
-  .form-success {
-    display: none;
-    text-align: center;
-    padding: 20px 0;
-  }
+  .form-success { display: none; text-align: center; padding: 20px 0; }
   .form-success.active { display: block; }
+  .form-success p { font-size: 16px; line-height: 1.6; color: #334155; }
   .form-success-icon {
     width: 56px; height: 56px;
     border-radius: 50%;
     background: #DCFCE7;
-    color: #16A34A;
+    color: #15803D;
     font-size: 28px;
     display: flex; align-items: center; justify-content: center;
     margin: 0 auto 16px;
@@ -660,37 +465,41 @@
 
   /* ─── RESPONSIVE ──────────────────────────── */
   @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .score-card { display: none; }
-    .steps-grid { grid-template-columns: 1fr; }
-    .pricing-grid { grid-template-columns: 1fr; }
-    .testimonials-grid { grid-template-columns: 1fr; }
-    footer { justify-content: center; text-align: center; }
+    .hero-inner, .card-grid, .outcomes { grid-template-columns: minmax(0, 1fr); }
+    .section { padding: 64px 24px; }
   }
   @media (max-width: 640px) {
+    .site-nav, #hero, .section, footer { padding-left: 16px; padding-right: 16px; }
+    .nav-logo svg { height: 32px; }
+    .nav-cta { font-size: 13px; padding: 0 12px; }
+    #hero { padding-top: 92px; padding-bottom: 56px; }
     .hero-actions { flex-direction: column; }
-    .btn-primary, .btn-ghost { text-align: center; justify-content: center; }
+    .btn-primary, .btn-ghost { justify-content: center; text-align: center; }
+    .ticks { grid-template-columns: minmax(0, 1fr); }
+    .modal-overlay { padding: 12px; }
+    .modal-box { padding: 28px 18px; margin: 12px auto; }
   }
 
   /* ─── ANIMATIONS ──────────────────────────── */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+  @media (prefers-reduced-motion: no-preference) {
+    .js .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .js .fade-up.visible { opacity: 1; transform: none; }
   }
-  .fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
   }
 </style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <!-- NAV -->
-<nav>
+<nav class="site-nav" aria-label="Main">
   <div class="nav-logo">
-    <!-- VisibilityHQ Logo — icon left of wordmark (Canva export) -->
-    <svg viewBox="0 0 480 72" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VisibilityHQ logo">
+    <!-- VisibilityHQ Logo: icon left of wordmark (Canva export) -->
+    <svg viewBox="0 0 300 72" width="167" height="40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VisibilityHQ logo">
       <!-- Icon: magnifying glass -->
       <circle cx="36" cy="36" r="22" fill="#3B82F6"/>
       <circle cx="36" cy="36" r="17.5" fill="#0F1B2D"/>
@@ -704,191 +513,294 @@
       <circle cx="36" cy="36" r="26" fill="none" stroke="#3B82F6" stroke-width="0.8" stroke-dasharray="4 6" opacity="0.35"/>
       <!-- Wordmark -->
       <text x="82" y="30" font-family="'Sora',sans-serif" font-weight="800" font-size="26" fill="#FFFFFF" letter-spacing="-0.5">Visibility<tspan fill="#3B82F6">HQ</tspan></text>
-      <text x="84" y="50" font-family="'Sora',sans-serif" font-size="9" fill="#6B7A8F" letter-spacing="3">LOCAL VISIBILITY AUDITS</text>
+      <text x="84" y="50" font-family="'Sora',sans-serif" font-size="9" fill="#A5B5CC" letter-spacing="3">LOCAL VISIBILITY CHECKS</text>
     </svg>
   </div>
-  <a href="#cta" class="nav-cta" onclick="openModal('modal-free'); return false;">Get Free Audit →</a>
+  <a href="#cta" class="nav-cta" onclick="openModal('modal-free'); return false;">Free Visibility Check</a>
 </nav>
 
-<main id="main">
+<main id="main" tabindex="-1">
 
-<!-- HERO -->
+<!-- HERO + SAMPLE CARD -->
 <section id="hero">
   <div class="hero-grid-bg"></div>
   <div class="hero-glow"></div>
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-eyebrow">
-        📍 Perth Local Visibility Audits For Tradies
-      </div>
-      <h1 class="hero-h1">
-        Get found by local customers before they call the next tradie.
-      </h1>
-      <p class="hero-sub">
-        We run a free local visibility audit for trades and small businesses in Perth's north. Find out exactly where you're losing calls — and what to do about it.
-      </p>
+      <p class="hero-eyebrow">Perth's northern suburbs · Visibility checks for tradies</p>
+      <h1 class="hero-h1">Get found by local customers before they call the next tradie.</h1>
+      <p class="hero-sub">We check how your business appears across Google, your website, reviews, social media and local listings. See what's working, what needs attention and where to start, to help local customers find and contact you.</p>
       <div class="hero-actions">
-        <a href="#cta" class="btn-primary" onclick="openModal('modal-free'); return false;">
-          Get Your Free Audit →
-        </a>
-        <a href="#how" class="btn-ghost">
-          See how it works
-        </a>
+        <a href="#cta" class="btn-primary" onclick="openModal('modal-free'); return false;">Get Your Free Visibility Check →</a>
+        <a href="#how" class="btn-ghost">See How It Works</a>
       </div>
+      <p class="hero-line">Free · No payment details · No obligation</p>
     </div>
 
-    <!-- Score Widget -->
-    <div class="score-card">
-      <div class="score-card-label">Visibility Audit — Sample Report</div>
-      <div style="display:flex; align-items:flex-end; gap:16px; margin-bottom:8px;">
-        <div>
-          <div class="score-number" id="scoreNum">0<span>/100</span></div>
-        </div>
-        <div class="score-status status-danger">⚠ Invisible Danger Zone</div>
-      </div>
+<article class="vhq-card" aria-labelledby="vhq-sample-title">
+  <div class="vhq-top">
+    <h2 class="vhq-eyebrow" id="vhq-sample-title">Visibility Check · Sample report</h2>
+    <span class="vhq-example">Example only · invented business</span>
+  </div>
 
-      <div class="score-meter" id="scoreMeter">
-        <!-- bars filled by JS -->
-      </div>
+  <div class="vhq-score">
+    <strong>34</strong><span>/100</span>
+    <span class="vhq-status">Needs attention</span>
+  </div>
+  <p class="vhq-note">Our assessment score across five categories. It is not a Google score or a ranking prediction.</p>
 
-      <div class="score-gaps">
-        <div class="gap-item">
-          <div class="gap-icon red">📍</div>
-          <div class="gap-text">Google profile incomplete — missing services & description</div>
-          <div class="gap-pts">−20 pts</div>
-        </div>
-        <div class="gap-item">
-          <div class="gap-icon red">⭐</div>
-          <div class="gap-text">No reviews in last 30 days</div>
-          <div class="gap-pts">−20 pts</div>
-        </div>
-        <div class="gap-item">
-          <div class="gap-icon yellow">📱</div>
-          <div class="gap-text">Website not mobile-friendly</div>
-          <div class="gap-pts">−10 pts</div>
-        </div>
-      </div>
+  <h3 class="vhq-h">Score breakdown</h3>
+  <ul class="vhq-cats">
+    <li class="vhq-cat"><span>Google profile</span>
+      <div class="vhq-bar" role="meter" aria-label="Google profile" aria-valuemin="0" aria-valuemax="20" aria-valuenow="5"><i style="width:25%"></i></div>
+      <b>5<small>/20</small></b></li>
+    <li class="vhq-cat"><span>Reviews</span>
+      <div class="vhq-bar" role="meter" aria-label="Reviews" aria-valuemin="0" aria-valuemax="20" aria-valuenow="4"><i style="width:20%"></i></div>
+      <b>4<small>/20</small></b></li>
+    <li class="vhq-cat"><span>Website</span>
+      <div class="vhq-bar" role="meter" aria-label="Website" aria-valuemin="0" aria-valuemax="20" aria-valuenow="6"><i style="width:30%"></i></div>
+      <b>6<small>/20</small></b></li>
+    <li class="vhq-cat"><span>Social</span>
+      <div class="vhq-bar" role="meter" aria-label="Social" aria-valuemin="0" aria-valuemax="20" aria-valuenow="9"><i style="width:45%"></i></div>
+      <b>9<small>/20</small></b></li>
+    <li class="vhq-cat"><span>Local listings</span>
+      <div class="vhq-bar" role="meter" aria-label="Local listings" aria-valuemin="0" aria-valuemax="20" aria-valuenow="10"><i style="width:50%"></i></div>
+      <b>10<small>/20</small></b></li>
+  </ul>
 
-      <div class="score-footer">
-        <span>vs. competitor scoring <strong style="color:#fff">87/100</strong></span>
-        <div class="score-badge">✓ Free to request</div>
-      </div>
-    </div>
+  <h3 class="vhq-h">Priority findings</h3>
+  <ul class="vhq-finds">
+    <li class="vhq-find"><span class="vhq-tag fix">Fix first</span>
+      The Google Business Profile is missing important service information and a business description.</li>
+    <li class="vhq-find"><span class="vhq-tag fix">Fix first</span>
+      The website has mobile usability issues that may make it harder for customers to make contact.</li>
+    <li class="vhq-find"><span class="vhq-tag consider">Worth considering</span>
+      Recent review activity is lower than that of the selected local competitors.</li>
+  </ul>
+  <p class="vhq-findnote">Prioritised by impact on accuracy and customer contact, not only by the lowest score.</p>
+
+  <div class="vhq-cmp">
+    <div class="vhq-cmp-row vhq-you"><span>Your business</span>
+      <div class="vhq-bar"><i style="width:34%"></i></div><b>34</b></div>
+    <div class="vhq-cmp-row vhq-them"><span>Example competitor</span>
+      <div class="vhq-bar"><i style="width:87%"></i></div><b>87</b></div>
+    <p class="vhq-cmp-note">Both assessed on the same five categories. Shows visibility factors, not calls or customers.</p>
+  </div>
+
+  <div class="vhq-foot">
+    <a class="vhq-btn" href="#cta">Get my free Visibility Check →</a>
+    <a href="#how-we-score">Understand your score →</a>
+  </div>
+</article>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
-<section id="how">
+<section id="how" class="section">
   <div class="section-inner">
     <span class="section-eyebrow">How it works</span>
     <h2 class="section-h2">Three steps. No mystery.</h2>
-    <p class="section-lead">No tech skills needed. No contracts. We start with a free audit — You see the same local search picture your customers see, then get the practical work list that improves it, then you decide what happens next.</p>
-    <div class="steps-grid">
-      <div class="step-card fade-up">
-        <div class="step-num">STEP 01</div>
-        <span class="step-icon">🔍</span>
-        <div class="step-title">Free Visibility Audit</div>
-        <p class="step-desc">We check your Google Business Profile, reviews, website, and local citations — then score you out of 100 and show you exactly where competitors are stealing your calls.</p>
-        <div class="step-accent"></div>
-      </div>
-      <div class="step-card fade-up" style="transition-delay:0.1s">
-        <div class="step-num">STEP 02</div>
-        <span class="step-icon">📋</span>
-        <div class="step-title">Choose Your Path</div>
-        <p class="step-desc">One quick question: do you want a step-by-step fix-it roadmap ($149), or have us handle everything for you ($499)?</p>
-        <div class="step-accent"></div>
-      </div>
-      <div class="step-card fade-up" style="transition-delay:0.2s">
-        <div class="step-num">STEP 03</div>
-        <span class="step-icon">📈</span>
-        <div class="step-title">Start Getting Found</div>
-        <p class="step-desc">We complete everything in 7 days. Your profile is optimised, photos uploaded, citations fixed, and you're showing up on the local map pack where your customers are searching.</p>
-        <div class="step-accent"></div>
-      </div>
+    <p class="section-lead">No tech skills needed. No lock-in contracts. We start with a free check of your online basics, you get a plain-English picture of what's working and what isn't, and then you decide what happens next.</p>
+    <div class="card-grid">
+      <article class="step-card accent-orange fade-up">
+        <div class="step-icon"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></div>
+        <p class="step-num">STEP 01</p>
+        <h3 class="step-title">Check</h3>
+        <p class="step-tag">Free Visibility Check</p>
+        <p class="step-desc">We check your Google Business Profile, website, reviews, social media and local listings. You get a score out of 100 with a five-category breakdown, a comparison with a selected local competitor where suitable, and your three priority findings.</p>
+      </article>
+      <article class="step-card accent-teal fade-up">
+        <div class="step-icon"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></div>
+        <p class="step-num">STEP 02</p>
+        <h3 class="step-title">Fix</h3>
+        <p class="step-tag">Choose your level of help</p>
+        <p class="step-desc"><strong>Visibility Growth Plan — A$149 inc. GST.</strong> Make the changes yourself with a detailed assessment, prioritised recommendations and a practical action plan.</p>
+        <p class="step-desc"><strong>Done For You — A$499 inc. GST.</strong> We carry out agreed Google Business Profile improvements for you.</p>
+        <p class="step-fine">The scope and price are agreed in writing before any paid work starts. All prices include GST.</p>
+      </article>
+      <article class="step-card accent-blue fade-up">
+        <div class="step-icon"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div>
+        <p class="step-num">STEP 03</p>
+        <h3 class="step-title">Review and advise</h3>
+        <p class="step-tag">See what's changed, then decide</p>
+        <p class="step-desc">Both paid options include a 90-day re-audit. We'll email you at 90 days to arrange it, repeat the original checks and compare the results. Then we'll explain what's improved, what still needs attention and what, if anything, is worth doing next.</p>
+        <p class="step-desc"><strong>Sometimes the answer is nothing.</strong></p>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
-<section id="pricing">
-  <div class="section-inner" style="text-align:center;">
+<section id="pricing" class="section">
+  <div class="section-inner">
     <span class="section-eyebrow">Pricing</span>
     <h2 class="section-h2">Flat prices. No surprises.</h2>
-    <p class="section-lead" style="margin:0 auto 48px;">Tradies respect upfront pricing — so that's exactly what we offer.</p>
-    <div class="pricing-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 1100px;">
+    <p class="section-lead">Growth Plan if you'll make the changes yourself. Done For You if you'd rather we did it.</p>
+    <div class="card-grid">
 
-      <!-- Free Audit -->
-      <div class="plan-card fade-up" style="border:2px solid #0F1B2D;">
-        <div class="plan-name">Free Visibility Audit</div>
-        <div class="plan-desc">See exactly where your business stands in local search — no cost, no obligation.</div>
-        <div class="plan-price" style="color:#0F1B2D">$0</div>
-        <div class="plan-price-note">one-time offer</div>
-        <div class="plan-features">
-          <div class="plan-feat"><span class="feat-check">✓</span>Visibility score out of 100</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>Competitor comparison — see who's beating you and why</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>Top 3–5 specific gaps identified</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>Delivered as a 1-page report within 24 hours</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>No strings attached</div>
+      <!-- Free Visibility Check -->
+      <article class="plan-card accent-orange fade-up">
+        <h3 class="plan-name">Free Visibility Check</h3>
+        <p class="plan-who">Start here</p>
+        <p class="plan-price">Free</p>
+        <p class="plan-desc">A snapshot of your online visibility.</p>
+        <ul class="plan-features">
+          <li>Visibility score out of 100, with a five-category breakdown</li>
+          <li>Google Business Profile and website check</li>
+          <li>Reviews, social media and local listings snapshot</li>
+          <li>Comparison with a selected local competitor, where suitable</li>
+          <li>Your three priority findings</li>
+          <li>Summary report by email</li>
+        </ul>
+        <div class="plan-bottom">
+          <p class="plan-fine">The free check does not include detailed supporting evidence, in-depth competitor analysis or an action plan.</p>
+          <p class="plan-fine">No payment details. No obligation.</p>
+          <button type="button" class="plan-cta solid" onclick="openModal('modal-free')">Get My Free Visibility Check →</button>
         </div>
-        <button class="plan-cta" style="background:var(--amber);color:var(--navy);border:none;" onclick="openModal('modal-free')">Get My Free Audit →</button>
-      </div>
+      </article>
 
-      <!-- Level 3: Growth Plan -->
-      <div class="plan-card fade-up" style="transition-delay:0.1s; border:2px solid #0F1B2D;">
-        <div class="plan-name">Visibility Growth Plan</div>
-        <div class="plan-desc">A custom step-by-step roadmap of exactly what's costing you local jobs — with a clear 30-day fix-it plan you can work through at your own pace.</div>
-        <div class="plan-price" style="color:var(--teal-text)">$149</div>
-        <div class="plan-price-note">one-time</div>
-        <div class="plan-features">
-          <div class="plan-feat"><span class="feat-check">✓</span>Detailed competitor analysis</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>Priority issue ranking</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>30-day action roadmap</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>90-day growth framework</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>Loom video walkthrough of your personalised roadmap</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>30-day follow-up check-in to track your progress</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>Priority re-audit after 30 days to measure improvement</div>
+      <!-- Growth Plan -->
+      <article class="plan-card accent-teal fade-up">
+        <h3 class="plan-name">Visibility Growth Plan</h3>
+        <p class="plan-who">You do the work</p>
+        <p class="plan-price">A$149 <small>inc. GST, one-time</small></p>
+        <p class="plan-desc">For owners who want the full picture and a plan they can carry out themselves.</p>
+        <ul class="plan-features">
+          <li>Detailed five-category assessment, with the evidence and screenshots behind each score</li>
+          <li>Dated baseline: scores and local search snapshot</li>
+          <li>Detailed comparison with 2–3 local competitors</li>
+          <li>Prioritised recommendations</li>
+          <li>30-day action plan and longer-term priorities</li>
+          <li>Review-request templates</li>
+          <li>Personalised Loom walkthrough</li>
+          <li>30-day progress email check-in</li>
+        </ul>
+        <div class="plan-bottom">
+          <p class="plan-reaudit">Includes 90-day re-audit to measure improvement</p>
+          <p class="plan-fine">You make the changes. We re-check at 90 days.</p>
+          <button type="button" class="plan-cta" onclick="openModal('modal-growth')">Choose the Visibility Growth Plan →</button>
         </div>
-        <button class="plan-cta" style="background:#14B8A6;border:none;color:#0F1B2D;font-family:'Sora',sans-serif;font-weight:700;font-size:15px;width:100%;padding:14px;border-radius:10px;cursor:pointer;" onclick="openModal('modal-growth')">Get My Roadmap →</button>
-      </div>
+      </article>
 
-      <!-- Level 4: DFY -->
-      <div class="plan-card featured fade-up" style="transition-delay:0.2s">
-        <div class="plan-badge" style="background:var(--blue-strong);color:#fff;">Most Popular</div>
-        <div class="plan-name">Done For You</div>
-        <div class="plan-desc">We handle everything. You stay on the tools.</div>
-        <div class="plan-price" style="color:#3B82F6">$499</div>
-        <div class="plan-price-note">one-time — complete Google Business Profile optimisation</div>
-        <div class="plan-features">
-          <div class="plan-feat"><span class="feat-check">✓</span>Category cleanup & keyword descriptions</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>Photo optimisation</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>Citation alignment across all platforms</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>Custom review short-link (for invoices & vehicle signage)</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>Geo-signal and map pin fix</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>Before & after screenshot report — see exactly what changed</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>Loom video walkthrough of all work completed and why</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>Review request template written specifically for your business</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>Google Posts — first month written & published for you</div>
-          <div class="plan-feat"><span class="feat-check">✓</span>90-day visibility re-audit included — we check back in and measure your growth</div>
+      <!-- Done For You -->
+      <article class="plan-card accent-slate fade-up">
+        <h3 class="plan-name">Done For You</h3>
+        <p class="plan-who">We do it for you</p>
+        <p class="plan-price">A$499 <small>inc. GST, one-time</small></p>
+        <p class="plan-desc">For owners who want us to carry out agreed improvements to their Google Business Profile.</p>
+        <ul class="plan-features">
+          <li>Dated baseline of your profile</li>
+          <li>Category, service and description updates</li>
+          <li>Up to 10 suitable photos from those you send, selected and uploaded</li>
+          <li>Listing corrections on Yellow Pages, True Local and Hotfrog where possible; Hipages checked and reported</li>
+          <li>Scan-to-review QR code and review-request materials</li>
+          <li>One Google Business Profile post</li>
+          <li>Before-and-after report and Loom walkthrough</li>
+        </ul>
+        <div class="plan-bottom">
+          <p class="plan-reaudit">Includes 90-day re-audit: we check back in, measure what has changed and advise what, if anything, needs doing</p>
+          <p class="plan-fine">Requires an existing Google Business Profile. Manager or Admin invite only. We never ask for passwords. Not included: website changes, ads or ongoing management. No ranking guarantees.</p>
+          <button type="button" class="plan-cta" onclick="openModal('modal-dfy')">Choose Done For You →</button>
         </div>
-        <button class="plan-cta" style="background:var(--blue-strong);color:#fff;border:none;font-family:'Sora',sans-serif;font-weight:700;font-size:15px;width:100%;padding:14px;border-radius:10px;cursor:pointer;" onclick="openModal('modal-dfy')">Get It Done For Me →</button>
-      </div>
+      </article>
 
     </div>
-    <p style="margin-top:32px; font-size:13px; color:var(--muted);">Not sure which is right for you? Start with the free audit — we'll recommend the best fit.</p>
+    <p class="pricing-under">Not sure? Start with the free check. It shows which option, if any, you need.</p>
+    <p class="pricing-small">All prices include GST.</p>
   </div>
 </section>
 
 <!-- CTA -->
-<section id="cta">
+<section id="cta" class="section">
   <div class="cta-inner">
     <h2 class="cta-h2">Find out your <em>visibility score</em> — free.</h2>
-    <p class="cta-sub">Takes 60 seconds to request. We'll have your personalised audit report back to you within 24 hours — showing your score, your competitors' scores, and your top 3 gaps.</p>
-    <button onclick="openModal('modal-free')" class="btn-primary" style="font-size:17px; padding:18px 36px; border:none; cursor:pointer;">
-      Request My Free Audit →
-    </button>
-    <div class="cta-guarantee">
-      ✓ No cost &nbsp;·&nbsp; ✓ No sales pressure &nbsp;·&nbsp; ✓ Your report within 24 hours
-    </div>
+    <p class="cta-sub">Request your free Visibility Check. You'll receive your score, a five-category breakdown and your three priority findings by email.</p>
+    <button type="button" onclick="openModal('modal-free')" class="btn-primary">Request My Free Visibility Check →</button>
+    <p class="cta-guarantee">No cost · No payment details · No obligation</p>
+  </div>
+</section>
+
+<!-- AFTER 90 DAYS -->
+<section id="after-90-days" class="section bg-white">
+  <div class="section-inner prose">
+    <h2 class="section-h2">What happens after 90 days?</h2>
+    <p>Your included 90-day re-audit shows what has changed since your first assessment. We'll explain the results and tell you what, if anything, is worth doing next. One of three things can follow:</p>
+    <ul class="outcomes">
+      <li><strong>Nothing more.</strong> Your foundations are in good shape.</li>
+      <li><strong>One more specific job.</strong> Quoted and agreed in writing.</li>
+      <li><strong>Optional upkeep.</strong> Only if the re-audit shows something needs regular attention, such as review requests not going out or business details changing. If that's the case we can discuss a month-to-month arrangement with a one-page scope and monthly price agreed in writing. No lock-in contract.</li>
+    </ul>
+    <p>The re-audit is included with the Growth Plan and Done For You. There's no obligation to continue.</p>
+  </div>
+</section>
+
+<!-- COMMITMENTS -->
+<section id="commitments" class="section bg-slate">
+  <div class="section-inner prose">
+    <h2 class="section-h2">Straightforward from the start</h2>
+    <ul class="ticks">
+      <li>Free check first.</li>
+      <li>Written scope and price before paid work.</li>
+      <li>No ranking guarantees.</li>
+      <li>Re-audits included with the Growth Plan and Done For You.</li>
+      <li>Further work is optional.</li>
+      <li>No lock-in contracts.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section bg-white">
+  <div class="section-inner narrow prose faq">
+    <h2 class="section-h2">FAQ</h2>
+    <details><summary><h3>What do I get from the free check?</h3></summary><p>A score out of 100 with a five-category breakdown, a comparison with a selected local competitor where suitable, and your three priority findings, by email.</p></details>
+    <details><summary><h3>Is it really free? What's the catch?</h3></summary><p>No catch. There's no payment step and no obligation. If you'd like more detail or help afterwards, there are two paid options. If you don't, you keep the free check.</p></details>
+    <details><summary><h3>I've been burned by SEO before.</h3></summary><p>We don't sell monthly SEO. Our paid services are one-off, with the scope and price agreed in writing before work starts, and no ranking guarantees.</p></details>
+    <details><summary><h3>How do I know the findings are right?</h3></summary><p>We base findings on what's publicly visible at the time we check: your Google profile, website, reviews and listings. Reports are dated. If you think we've got something factually wrong, tell us and we'll correct it.</p></details>
+    <details><summary><h3>How long does it take?</h3></summary><p>We'll confirm the timing by email when you submit.</p></details>
+    <details><summary><h3>Will this get me to number one on Google?</h3></summary><p>No one can promise that. We show what's affecting your visibility and what to fix first. Results also depend on Google and on your competitors.</p></details>
+    <details><summary><h3>Is this only for tradies?</h3></summary><p>We focus on tradies and local service businesses in Perth's northern suburbs. If you run another local business, request a free check and we'll tell you whether we can help.</p></details>
+    <details><summary><h3>What's the difference between the Growth Plan and Done For You?</h3></summary><p>The Growth Plan gives you the detailed assessment and a plan you carry out yourself. Done For You means we carry out agreed Google Business Profile improvements for you. Both include a 90-day re-audit.</p></details>
+    <details><summary><h3>Do you need my passwords?</h3></summary><p>No. We never ask for passwords. For Done For You, you invite us as a Manager on your Google Business Profile.</p></details>
+    <details><summary><h3>What if I don't have a Google Business Profile, or it isn't verified?</h3></summary><p>We'll check it and contact you. Profile setup is a separate service (A$249 inc. GST). Google decides whether and when a profile is verified, and you may need to complete steps Google requires.</p></details>
+    <details><summary><h3>Will I be charged monthly? Is there a contract?</h3></summary><p>No contract, and no monthly charges. The Growth Plan and Done For You are one-off. If we ever discuss ongoing help, it would be month-to-month and agreed in writing first.</p></details>
+    <details><summary><h3>What happens after 90 days?</h3></summary><p>We email you to arrange your re-audit, repeat the original checks and compare the results. Then we explain what's improved and what, if anything, is worth doing next. Your re-audit is completed within 7 days after the 90-day mark, once you reply to confirm. If we haven't heard back by then, a re-audit is available as a paid one-off.</p></details>
+    <details><summary><h3>Which businesses do you work with?</h3></summary><p>Trades and small local businesses in Perth's northern suburbs. If you're elsewhere, ask us.</p></details>
+  </div>
+</section>
+
+<!-- HOW WE SCORE -->
+<section id="how-we-score" class="section bg-slate">
+  <div class="section-inner narrow prose">
+    <h2 class="section-h2">How we score</h2>
+    <p>Your Visibility Check scores five categories out of 20, for a total out of 100. It's our assessment of visibility factors at the date we check. It is not a Google score, a ranking, or a prediction of calls or customers.</p>
+    <ul class="score-list">
+      <li><strong>Google Business Profile (/20):</strong> category accuracy, profile completeness, photos, posting activity, and hours and attributes.</li>
+      <li><strong>Website (/20), our "Website and Enquiry Readiness" check:</strong> whether your phone number is visible and tap-to-call, whether there's a clear contact or quote path, whether your services are explained clearly, whether your service areas are easy to identify, how well the site works on a phone, whether your details match your Google profile, and whether trust information (licences, qualifications, reviews) is visible.</li>
+      <li><strong>Reviews (/20):</strong> how many, average rating, how recent, whether you reply, and whether reviews mention your services.</li>
+      <li><strong>Social (/20):</strong> Facebook and Instagram presence, posting recency and engagement.</li>
+      <li><strong>Local listings (/20):</strong> whether your name, address and phone match on sample directories.</li>
+    </ul>
+    <p><strong>Competitor comparison:</strong> we assess a selected local competitor on the same five categories on the same day.</p>
+    <p><strong>What the labels mean:</strong> 0–39 Needs attention · 40–69 Room to improve · 70–100 In good shape</p>
+    <p><strong>Finding labels:</strong> <em>Fix first</em> (affects accuracy, access or customer contact) · <em>Worth considering</em> (could help, less urgent) · <em>Optional</em>. Findings are prioritised by impact, not only by the lowest score.</p>
+    <p><strong>Limits:</strong> it's a snapshot. Profiles and search results change, so we repeat the same checks at your 90-day re-audit.</p>
+  </div>
+</section>
+
+<!-- ABOUT AND CONTACT -->
+<section id="contact" class="section">
+  <div class="section-inner narrow prose">
+    <h2 class="section-h2">About and contact</h2>
+    <p>VisibilityHQ is a Perth business that helps local trades and small businesses check and improve their online visibility. Questions before you request anything? <a href="mailto:jeff@visibilityhq.com.au">Email us.</a></p>
+    <p>VisibilityHQ checks whether your business can be found, understood, trusted and contacted — before you spend more on marketing.</p>
+    <ul class="contact-list">
+      <li>Email: <a href="mailto:jeff@visibilityhq.com.au">jeff@visibilityhq.com.au</a></li>
+      <li>Mobile: <a href="tel:+61494741615">0494 741 615</a></li>
+      <li>Perth, Western Australia</li>
+      <li>ABN 45 048 664 541</li>
+      <li>We reply on business days.</li>
+    </ul>
   </div>
 </section>
 
@@ -896,73 +808,62 @@
 
 <!-- ═══════════ LEAD FORM MODALS ═══════════ -->
 
-
-<!-- FREE AUDIT MODAL -->
+<!-- FREE VISIBILITY CHECK MODAL -->
 <div class="modal-overlay" id="modal-free">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('modal-free')">✕</button>
-    <div class="modal-title">Get Your Free Visibility Audit</div>
-    <div class="modal-sub">Takes about 60 seconds. We'll have your report back within 24 hours.</div>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="title-free" tabindex="-1">
+    <button type="button" class="modal-close" aria-label="Close" onclick="closeModal('modal-free')">✕</button>
+    <h2 class="modal-title" id="title-free">Get Your Free Visibility Check</h2>
+    <p class="modal-sub">Takes about a minute</p>
 
     <form name="free-audit" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event, 'modal-free')">
       <input type="hidden" name="form-name" value="free-audit" />
       <input type="hidden" name="plan" value="fva" />
-      <p class="hp-field"><label>Don't fill this out: <input name="bot-field" /></label></p>
+      <p class="hp-field" aria-hidden="true"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
 
       <div class="form-row">
-        <label>Full Name <span class="req">*</span></label>
-        <input type="text" name="Full Name" required>
+        <label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-name" type="text" name="Full Name" autocomplete="name" required>
       </div>
       <div class="form-row">
-        <label>Business Name <span class="req">*</span></label>
-        <input type="text" name="Business Name" required>
+        <label for="f-business">Business name <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-business" type="text" name="Business Name" autocomplete="organization" required>
       </div>
       <div class="form-row">
-        <label>Email Address <span class="req">*</span></label>
-        <input type="email" name="Email Address" required>
+        <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-email" type="email" name="Email Address" autocomplete="email" required>
       </div>
       <div class="form-row">
-        <label>Mobile Number <span class="req">*</span></label>
-        <input type="tel" name="Mobile Number" required>
+        <label for="f-suburb">Business suburb <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-suburb" type="text" name="Business Suburb" required>
       </div>
       <div class="form-row">
-        <label>Business Suburb <span class="req">*</span></label>
-        <input type="text" name="Business Suburb" required>
+        <label for="f-website">Website URL <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-website" type="text" name="Website URL" placeholder="Enter your website, or 'No website'" required>
       </div>
       <div class="form-row">
-        <label>Website URL <span class="req">*</span></label>
-        <input type="text" name="Website URL" placeholder="Enter your website, or 'No website'" required>
+        <label for="f-mobile">Mobile <span class="opt">(optional)</span></label>
+        <input id="f-mobile" type="tel" name="Mobile Number" autocomplete="tel" aria-describedby="f-mobile-hint">
+        <span class="hint" id="f-mobile-hint">only if you'd like a call or text</span>
       </div>
       <div class="form-row">
-        <label>What would you like us to focus on? <span class="req">*</span></label>
-        <select name="Focus Area" required>
+        <label for="f-gbp">Google Business Profile link <span class="opt">(optional)</span></label>
+        <input id="f-gbp" type="text" name="GBP URL" aria-describedby="f-gbp-hint">
+        <span class="hint" id="f-gbp-hint">helps us find the right listing</span>
+      </div>
+      <div class="form-row">
+        <label for="f-focus">What would you like us to focus on? <span class="opt">(optional)</span></label>
+        <select id="f-focus" name="Focus Area">
           <option value="">Select one...</option>
-          <option>Google Maps ranking</option>
+          <option>Google profile</option>
           <option>Website</option>
-          <option>Google Reviews</option>
+          <option>Reviews</option>
           <option>Competitors</option>
-          <option>Everything</option>
+          <option>Everything or not sure</option>
         </select>
       </div>
       <div class="form-row">
-        <label>Google Business Profile URL <span style="color:#64748B; font-weight:400;">(optional)</span></label>
-        <input type="text" name="GBP URL" placeholder="e.g. google.com/maps/place/your-business-name">
-        <span class="hint">Paste your Google Business Profile link if you know it — most people don't, but it saves us time if you do.</span>
-      </div>
-      <div class="form-row">
-        <label>Preferred Contact Method <span class="req">*</span></label>
-        <select name="Preferred Contact Method" required>
-          <option value="">Select one...</option>
-          <option>Phone — Morning</option>
-          <option>Phone — Afternoon</option>
-          <option>Phone — Evening</option>
-          <option>Email</option>
-          <option>Either</option>
-        </select>
-      </div>
-      <div class="form-row">
-        <label>How did you hear about Visibility HQ? <span class="req">*</span></label>
-        <select name="Referral Source" required>
+        <label for="f-source">How did you hear about us? <span class="opt">(optional)</span></label>
+        <select id="f-source" name="Referral Source">
           <option value="">Select one...</option>
           <option>Google Search</option>
           <option>Facebook</option>
@@ -973,83 +874,85 @@
         </select>
       </div>
 
-      <p class="form-consent">By submitting, you agree to be contacted about your enquiry.</p>
-      <button type="submit" class="form-submit-btn" style="background:var(--amber);color:var(--navy);">Get My Free Audit →</button>
+      <p class="form-consent">We'll use your details to prepare and email your free Visibility Check and to follow up about it. We don't sell your details. If you add a mobile number, we may call or text you about your check. <a href="/privacy" target="_blank" rel="noopener">Privacy policy<span class="sr-only"> (opens in a new tab)</span></a></p>
+      <button type="submit" class="form-submit-btn">Get My Free Visibility Check →</button>
     </form>
 
-    <div class="form-success" id="success-modal-free">
-      <div class="form-success-icon">✓</div>
-      <div class="modal-title" style="text-align:center;">You're all set!</div>
-      <div class="modal-sub" style="text-align:center;">We've got your details — your audit report will be in your inbox within 24 hours.</div>
+    <div class="form-success" id="success-modal-free" role="status" tabindex="-1">
+      <div class="form-success-icon" aria-hidden="true">✓</div>
+      <p>Thanks, <span class="success-name"></span>. We've got your details and will email your free Visibility Check. If it doesn't arrive, check your junk folder.</p>
     </div>
   </div>
 </div>
 
 <!-- GROWTH PLAN MODAL -->
 <div class="modal-overlay" id="modal-growth">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('modal-growth')">✕</button>
-    <div class="modal-title">Get Your Visibility Growth Roadmap</div>
-    <div class="modal-sub">A few extra questions so we can build a roadmap that's actually specific to your business.</div>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="title-growth" tabindex="-1">
+    <button type="button" class="modal-close" aria-label="Close" onclick="closeModal('modal-growth')">✕</button>
+    <h2 class="modal-title" id="title-growth">Request the Visibility Growth Plan</h2>
+    <p class="modal-sub">Tell us about your business. We'll email a written scope and a PayPal invoice (A$149 inc. GST) before any work starts. Nothing is charged until you agree.</p>
 
     <form name="growth-plan" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event, 'modal-growth')">
       <input type="hidden" name="form-name" value="growth-plan" />
       <input type="hidden" name="plan" value="growth" />
-      <p class="hp-field"><label>Don't fill this out: <input name="bot-field" /></label></p>
+      <p class="hp-field" aria-hidden="true"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
 
       <div class="form-row">
-        <label>Full Name <span class="req">*</span></label>
-        <input type="text" name="Full Name" required>
+        <label for="g-name">Full name <span class="req" aria-hidden="true">*</span></label>
+        <input id="g-name" type="text" name="Full Name" autocomplete="name" required>
       </div>
       <div class="form-row">
-        <label>Business Name <span class="req">*</span></label>
-        <input type="text" name="Business Name" required>
+        <label for="g-business">Business name <span class="req" aria-hidden="true">*</span></label>
+        <input id="g-business" type="text" name="Business Name" autocomplete="organization" required>
       </div>
       <div class="form-row">
-        <label>Email Address <span class="req">*</span></label>
-        <input type="email" name="Email Address" required>
+        <label for="g-email">Email <span class="req" aria-hidden="true">*</span></label>
+        <input id="g-email" type="email" name="Email Address" autocomplete="email" required>
       </div>
       <div class="form-row">
-        <label>Mobile Number <span class="req">*</span></label>
-        <input type="tel" name="Mobile Number" required>
+        <label for="g-suburb">Suburb <span class="req" aria-hidden="true">*</span></label>
+        <input id="g-suburb" type="text" name="Business Suburb" required>
       </div>
       <div class="form-row">
-        <label>Business Suburb <span class="req">*</span></label>
-        <input type="text" name="Business Suburb" required>
+        <label for="g-website">Website <span class="req" aria-hidden="true">*</span></label>
+        <input id="g-website" type="text" name="Website URL" required>
       </div>
       <div class="form-row">
-        <label>Website URL <span class="req">*</span></label>
-        <input type="text" name="Website URL" required>
+        <label for="g-trade">Trade or industry <span class="req" aria-hidden="true">*</span></label>
+        <input id="g-trade" type="text" name="Trade Industry" placeholder="e.g. Plumber, Electrician, Landscaper" required>
       </div>
       <div class="form-row">
-        <label>Google Business Profile URL <span class="req">*</span></label>
-        <input type="text" name="GBP URL" placeholder="e.g. google.com/maps/place/your-business-name" required>
+        <label for="g-areas">Service areas <span class="req" aria-hidden="true">*</span></label>
+        <input id="g-areas" type="text" name="Service Areas" placeholder="e.g. Joondalup, Wanneroo, Perth metro" required>
       </div>
       <div class="form-row">
-        <label>Trade / Industry <span class="req">*</span></label>
-        <input type="text" name="Trade Industry" placeholder="e.g. Plumber, Electrician, Landscaper" required>
+        <label for="g-mobile">Mobile <span class="opt">(optional)</span></label>
+        <input id="g-mobile" type="tel" name="Mobile Number" autocomplete="tel">
       </div>
       <div class="form-row">
-        <label>Service Areas <span class="req">*</span></label>
-        <input type="text" name="Service Areas" placeholder="e.g. Joondalup, Wanneroo, Perth metro" required>
+        <label for="g-gbp">Google Business Profile link <span class="opt">(optional)</span></label>
+        <input id="g-gbp" type="text" name="GBP URL">
       </div>
       <div class="form-row">
-        <label>Who are your main competitors? <span class="req">*</span></label>
-        <input type="text" name="Competitors" placeholder="List up to 3 business names" required>
+        <label for="g-comp">Competitors you'd like compared <span class="opt">(optional)</span></label>
+        <input id="g-comp" type="text" name="Competitors" aria-describedby="g-comp-hint">
+        <span class="hint" id="g-comp-hint">we choose if you don't</span>
       </div>
       <div class="form-row">
-        <label>What's your biggest visibility problem right now? <span class="req">*</span></label>
-        <select name="Biggest Visibility Challenge" required>
+        <label for="g-goal">What would you most like? <span class="opt">(optional)</span></label>
+        <select id="g-goal" name="Primary Goal">
           <option value="">Select one...</option>
-          <option>Not ranking on Google</option>
-          <option>No Google reviews</option>
-          <option>Competitors outranking me</option>
+          <option>More phone calls</option>
+          <option>More quote requests</option>
+          <option>More website enquiries</option>
+          <option>More Google reviews</option>
+          <option>Appear higher in local search</option>
           <option>Not sure</option>
         </select>
       </div>
       <div class="form-row">
-        <label>Approximately how many enquiries do you receive each month? <span class="req">*</span></label>
-        <select name="Monthly Enquiries" required>
+        <label for="g-enq">Roughly how many enquiries a month? <span class="opt">(optional)</span></label>
+        <select id="g-enq" name="Monthly Enquiries">
           <option value="">Select one...</option>
           <option>Under 10</option>
           <option>10–25</option>
@@ -1058,166 +961,113 @@
         </select>
       </div>
       <div class="form-row">
-        <label>What's your primary goal? <span class="req">*</span></label>
-        <select name="Primary Goal" required>
+        <label for="g-handling">Who answers missed calls and website enquiries? <span class="opt">(optional)</span></label>
+        <select id="g-handling" name="Enquiry Handling">
           <option value="">Select one...</option>
-          <option>More phone calls</option>
-          <option>More quote requests</option>
-          <option>More website enquiries</option>
-          <option>Better Google rankings</option>
-          <option>More Google reviews</option>
-          <option>Not sure</option>
+          <option>Me</option>
+          <option>Someone in the office</option>
+          <option>Nobody consistently</option>
         </select>
       </div>
       <div class="form-row">
-        <label>Are you currently working with an SEO or marketing company? <span class="req">*</span></label>
-        <select name="Existing Marketing Company" required>
+        <label for="g-reviews">Do you ask customers for reviews? <span class="opt">(optional)</span></label>
+        <select id="g-reviews" name="Review Requests">
           <option value="">Select one...</option>
-          <option>Yes</option>
+          <option>Regularly</option>
+          <option>Sometimes</option>
           <option>No</option>
-          <option>Previously</option>
-        </select>
-      </div>
-      <div class="form-row">
-        <label>How did you hear about Visibility HQ? <span class="req">*</span></label>
-        <select name="Referral Source" required>
-          <option value="">Select one...</option>
-          <option>Google Search</option>
-          <option>Facebook</option>
-          <option>LinkedIn</option>
-          <option>Referral</option>
-          <option>Email</option>
-          <option>Other</option>
         </select>
       </div>
 
-      <p class="form-consent">By submitting, you agree to be contacted about your enquiry.</p>
-      <button type="submit" class="form-submit-btn" style="background:#14B8A6;color:#0F1B2D;">Get My Roadmap →</button>
+      <p class="form-note">Payment is by PayPal invoice after you agree the scope. We never take card details on this site.</p>
+      <p class="form-consent">We'll use your details to prepare your plan and contact you about it. We don't sell your details. <a href="/privacy" target="_blank" rel="noopener">Privacy policy<span class="sr-only"> (opens in a new tab)</span></a></p>
+      <button type="submit" class="form-submit-btn">Request the Growth Plan →</button>
     </form>
 
-    <div class="form-success" id="success-modal-growth">
-      <div class="form-success-icon">✓</div>
-      <div class="modal-title" style="text-align:center;">You're all set!</div>
-      <div class="modal-sub" style="text-align:center;">We've got your details — we'll be in touch shortly to talk through your roadmap.</div>
+    <div class="form-success" id="success-modal-growth" role="status" tabindex="-1">
+      <div class="form-success-icon" aria-hidden="true">✓</div>
+      <p>Thanks, <span class="success-name"></span>. We'll email you a written scope and a PayPal invoice for the Visibility Growth Plan (A$149 inc. GST). Work starts once you've agreed the scope and paid.</p>
     </div>
   </div>
 </div>
 
 <!-- DONE FOR YOU MODAL -->
 <div class="modal-overlay" id="modal-dfy">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('modal-dfy')">✕</button>
-    <div class="modal-title">Let's Get It Done For You</div>
-    <div class="modal-sub">A few details so we can scope your project properly.</div>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="title-dfy" tabindex="-1">
+    <button type="button" class="modal-close" aria-label="Close" onclick="closeModal('modal-dfy')">✕</button>
+    <h2 class="modal-title" id="title-dfy">Request Done For You</h2>
+    <p class="modal-sub">We'll email a written scope and a PayPal invoice (A$499 inc. GST) before any work starts. Nothing is charged until you agree.</p>
 
     <form name="done-for-you" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleSubmit(event, 'modal-dfy')">
       <input type="hidden" name="form-name" value="done-for-you" />
       <input type="hidden" name="plan" value="dfy" />
-      <p class="hp-field"><label>Don't fill this out: <input name="bot-field" /></label></p>
+      <p class="hp-field" aria-hidden="true"><label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
 
       <div class="form-row">
-        <label>Full Name <span class="req">*</span></label>
-        <input type="text" name="Full Name" required>
+        <label for="d-name">Full name <span class="req" aria-hidden="true">*</span></label>
+        <input id="d-name" type="text" name="Full Name" autocomplete="name" required>
       </div>
       <div class="form-row">
-        <label>Business Name <span class="req">*</span></label>
-        <input type="text" name="Business Name" required>
+        <label for="d-business">Business name <span class="req" aria-hidden="true">*</span></label>
+        <input id="d-business" type="text" name="Business Name" autocomplete="organization" required>
       </div>
       <div class="form-row">
-        <label>Email Address <span class="req">*</span></label>
-        <input type="email" name="Email Address" required>
+        <label for="d-email">Email <span class="req" aria-hidden="true">*</span></label>
+        <input id="d-email" type="email" name="Email Address" autocomplete="email" required>
       </div>
       <div class="form-row">
-        <label>Mobile Number <span class="req">*</span></label>
-        <input type="tel" name="Mobile Number" required>
+        <label for="d-suburb">Suburb <span class="req" aria-hidden="true">*</span></label>
+        <input id="d-suburb" type="text" name="Business Suburb" required>
       </div>
       <div class="form-row">
-        <label>Business Suburb <span class="req">*</span></label>
-        <input type="text" name="Business Suburb" required>
+        <label for="d-website">Website <span class="req" aria-hidden="true">*</span></label>
+        <input id="d-website" type="text" name="Website URL" required>
       </div>
       <div class="form-row">
-        <label>Website URL <span class="req">*</span></label>
-        <input type="text" name="Website URL" required>
+        <label for="d-trade">Trade or industry <span class="req" aria-hidden="true">*</span></label>
+        <input id="d-trade" type="text" name="Trade Industry" placeholder="e.g. Plumber, Electrician, Landscaper" required>
       </div>
       <div class="form-row">
-        <label>Google Business Profile URL <span class="req">*</span></label>
-        <input type="text" name="GBP URL" placeholder="e.g. google.com/maps/place/your-business-name" required>
+        <label for="d-areas">Service areas <span class="req" aria-hidden="true">*</span></label>
+        <input id="d-areas" type="text" name="Service Areas" placeholder="e.g. Joondalup, Wanneroo, Perth metro" required>
       </div>
       <div class="form-row">
-        <label>Trade / Industry <span class="req">*</span></label>
-        <input type="text" name="Trade Industry" placeholder="e.g. Plumber, Electrician, Landscaper" required>
+        <label for="d-mobile">Mobile <span class="opt">(optional)</span></label>
+        <input id="d-mobile" type="tel" name="Mobile Number" autocomplete="tel">
       </div>
       <div class="form-row">
-        <label>Service Areas <span class="req">*</span></label>
-        <input type="text" name="Service Areas" placeholder="e.g. Joondalup, Wanneroo, Perth metro" required>
+        <label for="d-gbp">Google Business Profile link <span class="opt">(optional)</span></label>
+        <input id="d-gbp" type="text" name="GBP URL">
+        <label class="check-label" for="d-noprofile"><input id="d-noprofile" type="checkbox" name="No Verified Profile" value="Yes"> I don't have a Google Business Profile, or I'm not sure it's verified</label>
       </div>
       <div class="form-row">
-        <label>Who are your main competitors? <span class="req">*</span></label>
-        <input type="text" name="Competitors" placeholder="List up to 3 business names" required>
+        <label for="d-improve">Anything specific you'd like improved? <span class="opt">(optional)</span></label>
+        <textarea id="d-improve" name="Specific Improvements"></textarea>
       </div>
       <div class="form-row">
-        <label>Which services are you interested in? <span class="req">*</span></label>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="Services Interested In" value="Google Business Profile"> Google Business Profile</label>
-          <label><input type="checkbox" name="Services Interested In" value="Local SEO"> Local SEO</label>
-          <label><input type="checkbox" name="Services Interested In" value="Website improvements"> Website improvements</label>
-          <label><input type="checkbox" name="Services Interested In" value="Review generation"> Review generation</label>
-          <label><input type="checkbox" name="Services Interested In" value="Ongoing visibility management"> Ongoing visibility management</label>
-          <label><input type="checkbox" name="Services Interested In" value="Not sure"> Not sure</label>
-        </div>
-      </div>
-      <div class="form-row">
-        <label>What best describes your business? <span class="req">*</span></label>
-        <select name="Business Size" required>
+        <label for="d-start">Preferred start <span class="opt">(optional)</span></label>
+        <select id="d-start" name="Preferred Start">
           <option value="">Select one...</option>
-          <option>Sole trader</option>
-          <option>Small business (2–10 staff)</option>
-          <option>Growing business</option>
-          <option>Multi-location business</option>
-        </select>
-      </div>
-      <div class="form-row">
-        <label>How important is improving your online visibility right now? <span class="req">*</span></label>
-        <select name="Urgency" required>
-          <option value="">Select one...</option>
-          <option>Critical</option>
-          <option>High</option>
-          <option>Medium</option>
+          <option>As soon as possible</option>
+          <option>Within a month</option>
           <option>Just exploring</option>
         </select>
       </div>
-      <div class="form-row">
-        <label>Preferred Contact Method <span class="req">*</span></label>
-        <select name="Preferred Contact Method" required>
-          <option value="">Select one...</option>
-          <option>Phone</option>
-          <option>Email</option>
-          <option>Either</option>
-        </select>
-      </div>
-      <div class="form-row">
-        <label>How did you hear about Visibility HQ? <span class="req">*</span></label>
-        <select name="Referral Source" required>
-          <option value="">Select one...</option>
-          <option>Google Search</option>
-          <option>Facebook</option>
-          <option>LinkedIn</option>
-          <option>Referral</option>
-          <option>Email</option>
-          <option>Other</option>
-        </select>
-      </div>
 
-      <p class="form-note">To get started, please add <a href="mailto:jeff@visibilityhq.com.au">jeff@visibilityhq.com.au</a> as a <strong>Manager</strong> on your Google Business Profile — see <a href="https://support.google.com/business/answer/3403100" target="_blank" rel="noopener">Google's official guide to adding managers</a>. We never need, and will never ask for, your Google password.</p>
-
-      <p class="form-consent">By submitting, you agree to be contacted about your enquiry.</p>
-      <button type="submit" class="form-submit-btn" style="background:var(--blue-strong);">Get It Done For Me →</button>
+      <ul class="form-note">
+        <li>Done For You covers improving an existing, verified profile. If you don't have one, we'll check and contact you; profile setup is a separate service (A$249 inc. GST).</li>
+        <li>After we agree the scope, you'll invite us as a Manager on your Google Business Profile. We will never ask for your Google password.</li>
+        <li>We'll ask for up to 10 of your own photos once the scope is agreed.</li>
+        <li>Not included: website changes, ads or ongoing management.</li>
+        <li>Payment is by PayPal invoice after you agree the scope. We never take card details on this site.</li>
+      </ul>
+      <p class="form-consent"><a href="/privacy" target="_blank" rel="noopener">Privacy policy<span class="sr-only"> (opens in a new tab)</span></a></p>
+      <button type="submit" class="form-submit-btn">Request Done For You →</button>
     </form>
 
-    <div class="form-success" id="success-modal-dfy">
-      <div class="form-success-icon">✓</div>
-      <div class="modal-title" style="text-align:center;">You're all set!</div>
-      <div class="modal-sub" style="text-align:center;">We've got your details — we'll be in touch shortly to get started.</div>
+    <div class="form-success" id="success-modal-dfy" role="status" tabindex="-1">
+      <div class="form-success-icon" aria-hidden="true">✓</div>
+      <p>Thanks, <span class="success-name"></span>. We'll email you a written scope and a PayPal invoice for Done For You (A$499 inc. GST). Work starts once you've agreed the scope and paid.<span class="success-noprofile" hidden> We'll check your profile first and contact you, because profile setup is a separate service (A$249 inc. GST).</span></p>
     </div>
   </div>
 </div>
@@ -1225,7 +1075,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">
-    <svg viewBox="0 0 480 72" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VisibilityHQ logo">
+    <svg viewBox="0 0 300 72" width="150" height="36" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VisibilityHQ logo">
       <circle cx="36" cy="36" r="22" fill="#3B82F6"/>
       <circle cx="36" cy="36" r="17.5" fill="#1A2E47"/>
       <circle cx="36" cy="36" r="13.5" fill="#FFFFFF"/>
@@ -1234,81 +1084,43 @@
       <line x1="53" y1="53" x2="65" y2="65" stroke="#0F1B2D" stroke-width="6" stroke-linecap="round"/>
       <circle cx="36" cy="36" r="26" fill="none" stroke="#3B82F6" stroke-width="0.8" stroke-dasharray="4 6" opacity="0.35"/>
       <text x="82" y="30" font-family="'Sora',sans-serif" font-weight="800" font-size="26" fill="#FFFFFF" letter-spacing="-0.5">Visibility<tspan fill="#3B82F6">HQ</tspan></text>
-      <text x="84" y="50" font-family="'Sora',sans-serif" font-size="9" fill="#6B7A8F" letter-spacing="3">LOCAL VISIBILITY AUDITS</text>
+      <text x="84" y="50" font-family="'Sora',sans-serif" font-size="9" fill="#A5B5CC" letter-spacing="3">LOCAL VISIBILITY CHECKS</text>
     </svg>
   </div>
-  <div class="footer-meta">Perth, Western Australia &nbsp;·&nbsp; jeff@visibilityhq.com.au</div>
-  <div class="footer-meta">© 2024 Visibility HQ</div>
+  <p><strong>VisibilityHQ — Check. Fix. Review and advise.</strong></p>
+  <p>Helping Perth businesses understand their online visibility before spending more on marketing.</p>
+  <nav aria-label="Footer">
+    <a href="#how">How it works</a>
+    <a href="#how-we-score">How we score</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <a href="/privacy">Privacy policy</a>
+    <a href="/terms">Terms</a>
+  </nav>
+  <p>© 2026 VisibilityHQ · ABN 45 048 664 541 · Perth, Western Australia</p>
 </footer>
 
 <script>
-// Score meter animation
-function buildMeter() {
-  const container = document.getElementById('scoreMeter');
-  if (!container) return;
-  const targetScore = 34;
-  const barCount = 20;
-  const filledBars = Math.round((targetScore / 100) * barCount);
-
-  for (let i = 0; i < barCount; i++) {
-    const bar = document.createElement('div');
-    bar.className = 'score-bar';
-    const filled = i < filledBars;
-    bar.style.background = filled
-      ? (i < 8 ? '#EF4444' : i < 14 ? '#F5A623' : '#22C55E')
-      : 'rgba(255,255,255,0.06)';
-    bar.style.height = '0px';
-    container.appendChild(bar);
-    if (filled) {
-      const targetH = 20 + (i / barCount) * 60;
-      setTimeout(() => {
-        bar.style.height = targetH + 'px';
-      }, 200 + i * 40);
-    } else {
-      bar.style.height = (8 + Math.random() * 12) + 'px';
-    }
-  }
-}
-
-// Score counter animation
-function animateScore() {
-  const el = document.getElementById('scoreNum');
-  if (!el) return;
-  const target = 34;
-  let current = 0;
-  const duration = 1400;
-  const start = performance.now();
-  function step(now) {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    current = Math.round(eased * target);
-    el.innerHTML = current + '<span>/100</span>';
-    if (progress < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-
 // Fade-up on scroll
 const fadeEls = document.querySelectorAll('.fade-up');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-}, { threshold: 0.15 });
+}, { threshold: 0.05 });
 fadeEls.forEach(el => observer.observe(el));
 
-// Init on load
-window.addEventListener('load', () => {
-  buildMeter();
-  setTimeout(animateScore, 600);
-});
-
 // ─── LEAD FORM MODALS ───────────────────────────
+let modalOpener = null;
 function openModal(id) {
-  document.getElementById(id).classList.add('active');
+  const modal = document.getElementById(id);
+  modalOpener = document.activeElement;
+  modal.classList.add('active');
   document.body.style.overflow = 'hidden';
+  modal.querySelector('.modal-box').focus();
 }
 function closeModal(id) {
   document.getElementById(id).classList.remove('active');
   document.body.style.overflow = '';
+  if (modalOpener) { modalOpener.focus(); modalOpener = null; }
 }
 // Close modal on background click
 document.querySelectorAll('.modal-overlay').forEach(overlay => {
@@ -1316,10 +1128,18 @@ document.querySelectorAll('.modal-overlay').forEach(overlay => {
     if (e.target === overlay) closeModal(overlay.id);
   });
 });
-// Close modal on Escape key
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.modal-overlay.active').forEach(overlay => closeModal(overlay.id));
+  const overlay = document.querySelector('.modal-overlay.active');
+  if (!overlay) return;
+  // Close modal on Escape key
+  if (e.key === 'Escape') { closeModal(overlay.id); return; }
+  // Keep Tab inside the open modal
+  if (e.key === 'Tab') {
+    const items = Array.from(overlay.querySelectorAll('button, a, input, select, textarea'))
+      .filter(el => el.tabIndex >= 0 && el.type !== 'hidden' && el.getClientRects().length > 0);
+    const first = items.at(0), last = items.at(-1), at = document.activeElement;
+    if (e.shiftKey && (at === first || !items.includes(at))) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && (at === last || !overlay.contains(at))) { e.preventDefault(); first.focus(); }
   }
 });
 
@@ -1334,9 +1154,15 @@ function handleSubmit(event, modalId) {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams(formData).toString()
   })
-  .then(() => {
+  .then((response) => {
+    if (!response.ok) throw new Error('Form submission failed: ' + response.status);
+    const success = document.getElementById('success-' + modalId);
+    success.querySelector('.success-name').textContent = formData.get('Full Name').trim();
+    const noProfile = success.querySelector('.success-noprofile');
+    if (noProfile) noProfile.hidden = !formData.has('No Verified Profile');
     form.style.display = 'none';
-    document.getElementById('success-' + modalId).classList.add('active');
+    success.classList.add('active');
+    success.focus();
   })
   .catch((error) => {
     alert('Something went wrong submitting the form. Please try again, or email jeff@visibilityhq.com.au directly.');
